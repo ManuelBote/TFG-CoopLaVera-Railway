@@ -1,0 +1,98 @@
+<!--Tareas pendientes-->
+<!-- Intentar y solo intentar optimizar la pagina -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/gestionMateriales-estilos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de Materiales</h1>
+    </header>
+
+    <section class="alquilarMaterial">
+      <div class="tablaStock">
+        <h1>Tabla stock</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ID Producto</th>
+              <th>Nombre Producto</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="formularioSolicitud">
+        <h1>Alquilar material</h1>
+        <div class="datosUsuario">
+          <div class="idUsuario">
+            <h2>ID Usuario</h2>
+            <input type="number" id="idUsuario" placeholder="ID del usuario" />
+          </div>
+          <div class="fecha">
+            <h2>Fecha de solicitud</h2>
+            <input type="datetime-local" id="fechaSolicitud" />
+          </div>
+        </div>
+
+        <div class="anadirMaterial">
+          <h2>Material</h2>
+          <select id="selectMaterial">
+            <option value="">-- Selecciona un material --</option>
+          </select>
+          <h2>Cantidad</h2>
+          <input type="number" id="cantidadMaterial" min="1" value="1" />
+          <button id="btnAnadir" class="anadirLista">+</button>
+        </div>
+
+        <div class="lista-materiales">
+          <h1>Materiales seleccionados</h1>
+          <ul id="listaMateriales"></ul>
+        </div>
+
+        <button id="btnEnviar" class="enviar">Enviar solicitud</button>
+        <h2 id="mensaje"></h2>
+      </div>
+    </section>
+
+    <section class="secciontabla">
+      <div class="cabecera">
+        <h1>Solicitudes</h1>
+        <div class="filtro">
+          <h2>Filtrar por:</h2>
+          <input type="number" id="filtroSocio" placeholder="Nº de Socio" oninput="filtrarSolicitudes()"/>
+          <input type="date" id="filtroFecha" oninput="filtrarSolicitudes()"/>
+        </div>
+      </div>
+
+      <table class="tabla">
+        <colgroup>
+          <col class="col-id" />
+          <col class="col-socio" />
+          <col class="col-fecha" />
+          <col class="col-estado" />
+          <col class="col-acciones" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nº de Socio</th>
+            <th>Fecha de solicitud</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="paginacion" class="paginacion"></div>
+    </section>
+  </body>
+  <script src="GestionMateriales.js"></script>
+</html>

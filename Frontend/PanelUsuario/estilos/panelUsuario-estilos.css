@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ffec99;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+header {
+    background-color: #2f9e44;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+main{
+    padding: 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+main>*{
+    margin-bottom: 10px;
+}
+
+.graficos{
+
+    display: grid;
+    grid-auto-flow: column;
+
+}
+
+.titulo{
+
+    font-size: 3rem;
+    padding-bottom: 20px;
+    border-bottom: 3px black solid;
+
+}
+
+.header-enlaces{
+
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.enlace{
+    
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    
+}
+.datosPersonales{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+
+a{
+
+text-decoration: none;
+
+}
+
+.datosUsuario, .estadisticas{
+
+    display: grid;
+    text-align: center;
+}
+
+.imagenPersonal{
+
+    border: solid 1px black;
+    
+}
+.datosUsuario img{
+    display: grid;
+    justify-self: center;
+    width: 200px;
+    height: 200px;
+}
+
+.precioProductos{
+
+    width: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+.entregasProductos{
+
+    width: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+
+}
+ul{
+
+    text-align: start;
+
+}
+
+

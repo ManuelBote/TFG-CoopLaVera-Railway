@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ffec99;
+    
+}
+
+header {
+
+    text-align: center;
+    width: 100%;
+    background-color: #3a843a;
+    padding: 10px;
+
+}
+
+.fincas {
+    display: grid;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.finca{
+    display: grid;
+    justify-items: center;
+    background-color: white;
+    padding: 40px;
+    border: 15px solid #000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+
+font-size: 1.2rem;
+width: 100%;
+
+}
+
+.editando .finca-fila{
+
+display: grid;
+grid-auto-flow: row;
+
+}
+
+.finca-botones{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+
+.editar, .guardar{
+
+    background-color: rgb(28, 108, 237);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.eliminar, .cancelar{
+
+    background-color: rgb(238, 43, 43);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+
+
+.btnañadir{
+
+    display: grid;
+    justify-self: center;
+    align-items:  center;
+    margin: 10px;
+    aspect-ratio: 1/1;
+
+}

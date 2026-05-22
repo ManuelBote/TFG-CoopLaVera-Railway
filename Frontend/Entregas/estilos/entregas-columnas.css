@@ -1,0 +1,81 @@
+@media (min-width: 600px) {
+
+    h1 {
+        font-size: 3.0rem;
+    }
+
+    .form-personal{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .form-prod {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    input,select{
+        width: 90%;
+        font-size: 1.8rem;
+        justify-self: center;
+    }
+    
+    
+
+}
+
+@media (min-width: 1050px) {
+    main{
+        max-width: 1400px;
+        margin: 0 auto
+
+    }
+
+    .form-cont{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+    
+    .calidades{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 10px;
+        border-left: red 5px solid;
+    }
+    .datos-personales{
+
+        padding: 10px;
+
+    }
+    .form-personal{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    input,select{
+        width: 100%;
+    }
+
+}
+@media (min-width: 1200px) {
+    
+    .form-personal{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    input,select{
+        width: 85%;
+    }
+
+}

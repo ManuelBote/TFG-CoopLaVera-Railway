@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(58, 132, 58);
+    background-image: url('fondo.jpg');
+}
+
+.icono{
+    max-width: 200px;
+    justify-self: center;
+    margin: 20px 0 20px 0;
+}
+.login {
+
+    display: grid;
+
+}
+
+form {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas: 
+    "Titulo Titulo"
+    "IconoP inputE"
+    "IconoC inputC"
+    "Enviar Enviar"
+    "error error"
+    "Registro Registro";
+    background-color: rgb(229, 233, 203);
+    border-top: 10px solid #833900;
+    border-right: 10px solid #833900;
+    border-left: 10px solid #833900;
+    border-bottom: 30px solid #833900;
+    border-radius: 10px;
+    padding: 0px 30px 50px 30px;
+    gap: 10px;
+}
+
+input{
+    padding: 10px;
+}
+a{
+    color: rgb(58, 132, 58);
+}
+.titulo{
+    grid-area: Titulo;
+    
+}
+ .IconoP{
+    grid-area: IconoP;
+}
+    
+.inputE{
+    grid-area: inputE;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color:  rgb(58, 132, 58);
+
+}
+.iconoC{
+    grid-area: IconoC;
+}
+.inputC{
+    grid-area: inputC;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color:  rgb(58, 132, 58);
+}
+.Enviar{
+    grid-area: Enviar;
+    width: 80%;
+    background-color: rgb(58, 132, 58);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+}
+.Enviar:hover {
+    background-color: rgb(39, 91, 39);
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.2s;
+}
+
+
+.error{
+    grid-area: error;
+    display: none;
+
+}
+.Registro{
+    grid-area: Registro;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+

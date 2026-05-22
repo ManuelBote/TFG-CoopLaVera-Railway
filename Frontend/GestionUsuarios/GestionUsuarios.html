@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="estilos/gestionUsuarios-estilos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <header><h1>Gestión de Usuarios</h1></header>
+    <section class="tabla">
+      <div class="filtro">
+        <input
+          type="text"
+          id="filtroDni"
+          placeholder="Filtrar por DNI"
+          oninput="filtrarUsuarios()"
+        />
+      </div>
+      <div class="grid-tabla">
+        <div class="grid-header">
+          <div>ID</div>
+          <div>Nombre</div>
+          <div>Apellidos</div>
+          <div>Email</div>
+          <div>Teléfono</div>
+          <div>DNI</div>
+          <div>Dirección</div>
+          <div>Localidad</div>
+          <div>Estado</div>
+          <div>Acciones</div>
+        </div>
+        <div id="grid-body"></div>
+      </div>
+      <div id="paginacion" class="paginacion"></div>
+    </section>
+  </body>
+  <script src="gestionUsuarios.js"></script>
+</html>

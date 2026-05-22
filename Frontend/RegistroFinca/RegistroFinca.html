@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/registrofinca-estilos.css">
+    <link rel="stylesheet" href="estilos/registrofinca-columnas.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="login">
+      <img class="icono" src="../imagenes/ICONO.svg" alt="" />
+
+      <form action="">
+        
+        <h1 class="titulo">Registro Finca</h1>
+
+        <label for="localidad">Localidad</label>
+        <input type="text" id="localidad" placeholder="Introduce la localidad" />
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" placeholder="Introduce la dirección" />
+
+        <label for="higueras">Nº de higueras</label>
+        <input type="number" id="higueras" placeholder="Introduce el número de higueras" min="0" />
+
+        <label for="ciruelos">Nº de ciruelos</label>
+        <input type="number" id="ciruelos" placeholder="Introduce el número de ciruelos" min="0" />
+
+        <label for="arandanos">Nº de arándanos</label>
+        <input type="number" id="arandanos" placeholder="Introduce el número de arándanos" min="0" />
+
+        <label for="cerezos">Nº de cerezos</label>
+        <input type="number" id="cerezos" placeholder="Introduce el número de cerezos" min="0" />
+
+        <label for="imagen">Imagen de la finca (opcional)</label>
+        <input type="file" id="imagen" accept="image/*" />
+
+        <h1 class="mensajeError" id="posibleError"></h1>
+        <button class="Enviar" type="button" onclick="registrarFinca()">Registrar finca</button>
+      </form>
+    </section>
+  </body>
+  <script src="RegistroFinca.js"></script>
+</html>

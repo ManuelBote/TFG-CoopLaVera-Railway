@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/registro-estilos.css">
+    <link rel="stylesheet" href="estilos/registro-columnas.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="login">
+      <img class="icono" src="../imagenes/ICONO.svg" alt="" />
+
+      <form action="">
+        
+        <h1 class="titulo">Registro</h1>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="" id="nombre" placeholder="Introduce tu nombre completo">
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="" id="apellidos" placeholder="Introduce tus apelidos">
+
+        <label for="dni">DNI</label>
+        <input type="text" name="" id="dni" placeholder="Introduce tu DNI">
+
+        <label for="email">Email</label>
+        <input class="inputE" type="email" name="" id="email" placeholder="Introduce tu correo electronico"/>
+
+        <label for="tlf">Telefono</label>
+        <input class="inputE" type="tel" name="" id="tlf" placeholder="Introduce tu numero de telefono"/>
+
+        <label for="direccion">Direccion</label>
+        <input class="inputE" type="email" name="" id="direccion" placeholder="Introduce tu dirección"/>
+
+        <label for="localidad">Localidad</label>
+        <input class="inputE" type="email" name="" id="localidad" placeholder="Introduce tu correo electronico"/>
+
+        <label for="contraseña">Contraseña</label>
+        <input class="inputC" type="password" name="" id="pass" placeholder="Introduce tu contraseña"/>
+
+        <label for="Confirmar">Confirmar contraseña</label>
+        <input class="inputC" type="password" name="" id="pass2" placeholder="Confirma tu contraseña"/>
+
+        <h1 id="posibleError"></h1>
+        <button class="registrar" type="button" onclick="registrarUsuario()">Registrarse</button>
+        <p class="Registro">¿Ya tienes cuenta? <a href="../Login/Login.html"><b>Inicia sesión</b></a></p>
+      </form>
+    </section>
+  </body>
+  <script src="Registro.js"></script>
+</html>

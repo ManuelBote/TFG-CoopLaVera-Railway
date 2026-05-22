@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    background-color: rgb(230, 227, 178);
+    max-width: 1800px;
+}
+img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    max-width: 200px;
+}
+header{
+    background-color: #b85c38;
+    text-align: center;
+    padding: 10px;
+}
+.productos {
+
+  background-color: rgb(245, 245, 122);
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.infoProd{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+}
+.precio-input {
+    width: 90%;
+}
+.prod-cont{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+.producto{
+
+    border: 20px #fff solid;
+    
+}
+button{
+
+    display: grid;
+    justify-self: stretch;
+    padding: 10px;
+    background-color: #e07b39;
+    margin-bottom: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.producto-botones{
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+
+}
+.guardar{
+    background-color: rgb(31, 118, 225);
+    width: 100%;
+}
+.cancelar{
+
+    background-color: rgb(237, 72, 72);
+    width: 100%;
+
+}
+input{
+
+    font-size: 1.2rem;
+
+}
+
