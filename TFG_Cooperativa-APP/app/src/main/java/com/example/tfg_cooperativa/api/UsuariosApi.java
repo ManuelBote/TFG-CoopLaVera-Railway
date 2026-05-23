@@ -83,7 +83,7 @@ public final class UsuariosApi {
         switch (estado.toLowerCase()) {
             case "pendiente": return 0;
             case "aceptado": return 1;
-            default: return 2; // rechazado u otros
+            default: return 2;
         }
     }
 

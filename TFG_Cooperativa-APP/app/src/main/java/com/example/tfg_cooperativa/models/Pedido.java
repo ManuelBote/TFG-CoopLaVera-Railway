@@ -16,7 +16,6 @@ public class Pedido {
     private final List<OrderLine> lines;
     private final double total;
     private final Status status;
-    /** Estado de la entrega: "pendiente" / "aceptado" / "rechazado" (o null para pedidos). */
     private final String estado;
 
     public Pedido(long id, Type type, Date date, List<OrderLine> lines, double total, Status status) {

@@ -71,7 +71,7 @@ public final class AutenticacionApi {
                 return;
             }
 
-            // La cuenta solo puede entrar si está aceptada.
+            // Solo te puedes loguear si está aceptada.
             String estado = user.optString("estado", "").toLowerCase(Locale.ROOT);
             if ("pendiente".equals(estado)) {
                 cb.onError(ctx.getString(R.string.err_cuenta_pendiente));

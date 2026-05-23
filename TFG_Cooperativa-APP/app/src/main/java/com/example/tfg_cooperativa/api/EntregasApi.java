@@ -10,7 +10,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public final class EntregasApi {
@@ -151,7 +150,8 @@ public final class EntregasApi {
                     e.optString("estado", EntregaAdmin.PENDIENTE)
             ));
         }
-        Collections.reverse(out);
+        // Más recientes primero (id más alto = entrega más nueva).
+        out.sort((a, b) -> Integer.compare(b.getId(), a.getId()));
         return out;
     }
 }
