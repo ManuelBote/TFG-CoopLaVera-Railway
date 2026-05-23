@@ -11,6 +11,21 @@
     <string name="nav_admin">Administración</string>
     <string name="nav_login">Iniciar Sesión</string>
     <string name="nav_logout">Cerrar Sesión</string>
+    <string name="nav_etiquetas">Etiquetas</string>
+
+    <!-- Etiquetas -->
+    <string name="etiquetas_title">Etiquetas</string>
+    <string name="etiquetas_subtitle">Genera las etiquetas (cupo) de tu fruta</string>
+    <string name="etiquetas_finca_label">Finca</string>
+    <string name="etiquetas_producto_label">Producto</string>
+    <string name="etiquetas_cantidad_label">Cantidad de etiquetas</string>
+    <string name="etiquetas_add">Añadir</string>
+    <string name="etiquetas_lista_label">Etiquetas a generar</string>
+    <string name="etiquetas_empty">Aún no has añadido etiquetas</string>
+    <string name="etiquetas_generar">Generar etiquetas</string>
+    <string name="etiquetas_creadas_ok">Etiquetas generadas correctamente</string>
+    <string name="etiquetas_err_campos">Elige un producto e indica una cantidad válida</string>
+    <string name="etiquetas_sin_fincas">Primero debes registrar una finca</string>
 
     <!-- Inicio -->
     <string name="inicio_bienvenida">Bienvenido a Cooperativa La Vera</string>
@@ -79,6 +94,7 @@
     <string name="detail_price_format_l">Calibre L: €%.2f/kg</string>
     <string name="detail_price_format_jumbo">Jumbo: €%.2f/kg</string>
     <string name="detail_delivery_empty">Introduce al menos una cantidad</string>
+    <string name="detail_delivery_rejected_title">No se pudo registrar la entrega</string>
     <string name="detail_delivery_no_date">Selecciona una fecha</string>
 
     <!-- Fincas -->
@@ -213,6 +229,8 @@
     <string name="entrega_dialog_edit_title">Editar entrega</string>
     <string name="entrega_updated_ok">Entrega actualizada</string>
     <string name="entrega_deleted_ok">Entrega eliminada</string>
+    <string name="entrega_aceptada_ok">Entrega aceptada</string>
+    <string name="entrega_rechazada_ok">Entrega rechazada</string>
     <string name="entrega_delete_confirm">¿Seguro que quieres eliminar esta entrega?</string>
     <string name="entrega_err_required">Completa socio, producto y fecha</string>
     <string name="admin_field_price_congelado">Precio congelado (€/kg)</string>

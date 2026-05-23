@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+
 import com.example.tfg_cooperativa.R;
 import com.example.tfg_cooperativa.api.ApiCallback;
 import com.example.tfg_cooperativa.api.EntregasApi;
@@ -190,11 +192,16 @@ public class ActividadDetalleProducto extends ActividadBase {
                     @Override
                     public void onError(String message) {
                         if (estaInactiva()) return;
-                        Toast.makeText(ActividadDetalleProducto.this,
-                                MapeadorErrores.paraGenerico(ActividadDetalleProducto.this, message),
-                                Toast.LENGTH_LONG).show();
                         btnRegistrarEntrega.setEnabled(true);
                         btnRegistrarEntrega.setText(R.string.detail_register_delivery);
+                        // El back rechaza la entrega (p. ej. cupo de etiquetas insuficiente)
+                        // con un 422 y un mensaje claro: lo mostramos en un diálogo.
+                        new AlertDialog.Builder(ActividadDetalleProducto.this)
+                                .setTitle(R.string.detail_delivery_rejected_title)
+                                .setMessage(MapeadorErrores.paraGenerico(
+                                        ActividadDetalleProducto.this, message))
+                                .setPositiveButton(R.string.btn_close, null)
+                                .show();
                     }
                 });
     }

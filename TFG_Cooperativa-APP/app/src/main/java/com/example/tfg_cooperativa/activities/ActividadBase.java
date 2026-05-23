@@ -82,6 +82,7 @@ public abstract class ActividadBase extends AppCompatActivity {
         else if (id == R.id.menuPortal) destino = ActividadPortal.class;
         else if (id == R.id.menuFincas) destino = ActividadMisFincas.class;
         else if (id == R.id.menuProductos) destino = ActividadProductos.class;
+        else if (id == R.id.menuEtiquetas) destino = ActividadEtiquetas.class;
         else if (id == R.id.menuAdministracion) destino = ActividadAdministracion.class;
 
         if (destino != null && !destino.equals(getClass())) {

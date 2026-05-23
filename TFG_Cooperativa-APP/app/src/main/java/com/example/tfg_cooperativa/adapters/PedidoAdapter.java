@@ -86,13 +86,35 @@ public class PedidoAdapter extends BaseAdapter {
         }
         listaItems.setText(sb.toString());
 
-        boolean completado = order.getStatus() == Pedido.Status.COMPLETED;
-        estado.setText(completado ? R.string.portal_status_completed
-                : R.string.portal_status_processing);
-        estado.setBackgroundResource(completado ? R.drawable.bg_chip_entrega
-                : R.drawable.bg_chip_pedido);
-        estado.setTextColor(ContextCompat.getColor(parent.getContext(),
-                completado ? R.color.green_700 : R.color.yellow_700));
+        // Si la entrega trae estado del back (pendiente/aceptado/rechazado) mostramos
+        // ese chip; si no, se usa el estado genérico completado/en proceso.
+        if (order.getEstado() != null) {
+            int estadoRes, bgRes, colorRes;
+            if (order.esAceptada()) {
+                estadoRes = R.string.solicitud_estado_aceptada;
+                bgRes = R.drawable.bg_chip_entrega;
+                colorRes = R.color.green_700;
+            } else if (order.esRechazada()) {
+                estadoRes = R.string.solicitud_estado_rechazada;
+                bgRes = R.drawable.bg_chip_rechazada;
+                colorRes = R.color.red_700;
+            } else {
+                estadoRes = R.string.solicitud_estado_pendiente;
+                bgRes = R.drawable.bg_chip_pedido;
+                colorRes = R.color.yellow_700;
+            }
+            estado.setText(estadoRes);
+            estado.setBackgroundResource(bgRes);
+            estado.setTextColor(ContextCompat.getColor(parent.getContext(), colorRes));
+        } else {
+            boolean completado = order.getStatus() == Pedido.Status.COMPLETED;
+            estado.setText(completado ? R.string.portal_status_completed
+                    : R.string.portal_status_processing);
+            estado.setBackgroundResource(completado ? R.drawable.bg_chip_entrega
+                    : R.drawable.bg_chip_pedido);
+            estado.setTextColor(ContextCompat.getColor(parent.getContext(),
+                    completado ? R.color.green_700 : R.color.yellow_700));
+        }
 
         total.setText(String.format(Locale.getDefault(), "€%.2f", order.getTotal()));
 
