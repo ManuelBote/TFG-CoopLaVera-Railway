@@ -33,6 +33,7 @@
         <activity android:name=".activities.ActividadDetalleProducto" />
         <activity android:name=".activities.ActividadPortal" android:launchMode="singleTop" />
         <activity android:name=".activities.ActividadMisFincas" android:launchMode="singleTop" />
+        <activity android:name=".activities.ActividadEtiquetas" android:launchMode="singleTop" />
         <activity android:name=".activities.ActividadAdministracion" android:launchMode="singleTop" />
     </application>
 

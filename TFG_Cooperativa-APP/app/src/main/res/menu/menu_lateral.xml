@@ -30,6 +30,11 @@
             android:id="@+id/menuProductos"
             android:icon="@drawable/ic_nav_delivery"
             android:title="@string/nav_products"/>
+
+        <item
+            android:id="@+id/menuEtiquetas"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/nav_etiquetas"/>
     </group>
 
     <group android:id="@+id/grupoAdmin" android:checkableBehavior="single">

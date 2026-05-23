@@ -271,22 +271,29 @@ public class ActividadPortal extends ActividadBase {
                 if (fila == null) continue;
                 int cantidad = fila.optInt("cantidad", 0);
                 Date fecha = parsearFecha(fila.optString("fecha", ""));
+                String estado = fila.optString("estado", "pendiente");
                 double importe = cantidad * precioMedio;
 
+                // El historial muestra TODAS las entregas con su estado.
                 Pedido.OrderLine linea = new Pedido.OrderLine(nombreProducto, cantidad);
                 entregas.add(new Pedido(idSintetico++, Pedido.Type.ENTREGA, fecha,
-                        Collections.singletonList(linea), importe, Pedido.Status.COMPLETED));
+                        Collections.singletonList(linea), importe, Pedido.Status.COMPLETED, estado));
 
-                totalCantidad += cantidad;
-                gananciaTotal += importe;
-
-                if (fecha != null) {
-                    String dia = ISO.format(fecha);
-                    Float acum = gananciasPorDia.get(dia);
-                    gananciasPorDia.put(dia, (acum == null ? 0f : acum) + (float) importe);
+                // Las gráficas y el total solo cuentan las entregas ACEPTADAS.
+                if ("aceptado".equalsIgnoreCase(estado)) {
+                    totalCantidad += cantidad;
+                    gananciaTotal += importe;
+                    if (fecha != null) {
+                        String dia = ISO.format(fecha);
+                        Float acum = gananciasPorDia.get(dia);
+                        gananciasPorDia.put(dia, (acum == null ? 0f : acum) + (float) importe);
+                    }
                 }
             }
-            entregasPorProducto.put(nombreProducto, totalCantidad);
+            // Solo añadimos el producto a la gráfica de cantidades si tiene kg aceptados.
+            if (totalCantidad > 0) {
+                entregasPorProducto.put(nombreProducto, totalCantidad);
+            }
         }
     }
 
@@ -326,8 +333,13 @@ public class ActividadPortal extends ActividadBase {
                 ? new SimpleDateFormat("dd/MM/yyyy", new Locale("es", "ES")).format(p.getDate())
                 : "-";
 
+        int estadoRes = p.esAceptada() ? R.string.solicitud_estado_aceptada
+                : p.esRechazada() ? R.string.solicitud_estado_rechazada
+                : R.string.solicitud_estado_pendiente;
+
         String msg = "Producto: " + producto
                 + "\nFecha: " + fecha
+                + "\nEstado: " + getString(estadoRes)
                 + "\nCantidad: " + cantidad + " kg"
                 + "\nImporte estimado: " + String.format(Locale.getDefault(), "€%.2f", p.getTotal());
 

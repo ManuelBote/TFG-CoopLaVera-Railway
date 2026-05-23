@@ -111,6 +111,24 @@ public final class EntregasApi {
         });
     }
 
+    /**
+     * PUT /api/gestionEntregas/{id}/estado — acepta o rechaza una entrega
+     * (solo admin). El estado debe ser "aceptado" o "rechazado".
+     */
+    public static void cambiarEstadoEntrega(Context ctx, int id, String estado, ApiCallback<Void> cb) {
+        JSONObject body = new JSONObject();
+        try {
+            body.put("estado", estado);
+        } catch (Exception ignored) {}
+
+        ApiCliente.put(ctx, "gestionEntregas/" + id + "/estado", body, new ApiCliente.JsonCallback() {
+            @Override
+            public void onSuccess(JSONObject jb, int code, String raw) { cb.onSuccess(null); }
+            @Override
+            public void onError(String message, int code, String raw) { cb.onError(message); }
+        });
+    }
+
     private static List<EntregaAdmin> parse(JSONArray arr) {
         List<EntregaAdmin> out = new ArrayList<>();
         if (arr == null) return out;
@@ -129,7 +147,8 @@ public final class EntregasApi {
                     e.optInt("cantidad_congelados"),
                     e.optInt("cantidad_m"),
                     e.optInt("cantidad_l"),
-                    e.optInt("cantidad_jumbo")
+                    e.optInt("cantidad_jumbo"),
+                    e.optString("estado", EntregaAdmin.PENDIENTE)
             ));
         }
         Collections.reverse(out);
