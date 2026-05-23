@@ -86,8 +86,7 @@ public class PedidoAdapter extends BaseAdapter {
         }
         listaItems.setText(sb.toString());
 
-        // Si la entrega trae estado del back (pendiente/aceptado/rechazado) mostramos
-        // ese chip; si no, se usa el estado genérico completado/en proceso.
+
         if (order.getEstado() != null) {
             int estadoRes, bgRes, colorRes;
             if (order.esAceptada()) {

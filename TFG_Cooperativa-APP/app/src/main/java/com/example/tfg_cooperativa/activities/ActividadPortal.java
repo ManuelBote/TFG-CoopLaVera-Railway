@@ -129,7 +129,11 @@ public class ActividadPortal extends ActividadBase {
         btnTabGanancias.setOnClickListener(v -> mostrarGanancias());
         btnTabMisDatos.setOnClickListener(v -> mostrarMisDatos());
         mostrarHistorial();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         cargarPerfil();
         cargarProductosYEntregas();
     }
@@ -353,10 +357,12 @@ public class ActividadPortal extends ActividadBase {
     private List<Pedido> entregasOrdenadas() {
         List<Pedido> todas = new ArrayList<>(entregas);
         todas.sort((a, b) -> {
-            if (a.getDate() == null && b.getDate() == null) return 0;
-            if (a.getDate() == null) return 1;
-            if (b.getDate() == null) return -1;
-            return b.getDate().compareTo(a.getDate());
+            Date da = a.getDate(), db = b.getDate();
+            if (da == null && db == null) return Long.compare(b.getId(), a.getId());
+            if (da == null) return 1;
+            if (db == null) return -1;
+            int c = db.compareTo(da);
+            return c != 0 ? c : Long.compare(b.getId(), a.getId());
         });
         return todas;
     }

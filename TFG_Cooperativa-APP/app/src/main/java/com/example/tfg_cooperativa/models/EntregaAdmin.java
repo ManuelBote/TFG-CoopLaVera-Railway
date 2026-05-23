@@ -1,13 +1,7 @@
 package com.example.tfg_cooperativa.models;
 
-/**
- * Entrega de fruta vista desde el panel admin (gestión completa).
- * Mapea una fila de {@code GET /api/gestionEntregas} con todos sus campos,
- * para poder editarla o eliminarla ({@code PUT/DELETE /api/gestionEntregas/{id}}).
- */
 public class EntregaAdmin {
 
-    /** Estados de una entrega (columna {@code estado} del back). */
     public static final String PENDIENTE = "pendiente";
     public static final String ACEPTADO = "aceptado";
     public static final String RECHAZADO = "rechazado";

@@ -71,7 +71,7 @@ public class AdminProductoAdapter extends BaseAdapter {
         MaterialButton btnEdit = fila.findViewById(R.id.btnEdit);
         MaterialButton btnDelete = fila.findViewById(R.id.btnDelete);
 
-        // Solo las frutas llevan imagen; los materiales (incl. cajas) usan emoji.
+        // Solo las frutas llevan imagen; los materiales usan emoji.
         int imgRes = p.isProduce() ? ImagenesProducto.paraNombre(p.getName()) : 0;
         if (imgRes != 0) {
             imagen.setImageResource(imgRes);
