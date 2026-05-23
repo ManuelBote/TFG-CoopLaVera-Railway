@@ -507,7 +507,33 @@ public class ActividadAdministracion extends ActividadBase {
             @Override public void onEditar(EntregaAdmin e) { mostrarDialogoEditarEntrega(e); }
             @Override public void onEliminar(EntregaAdmin e) { confirmarEliminarEntrega(e); }
             @Override public void onDetalle(EntregaAdmin e) { mostrarDetalleEntrega(e); }
+            @Override public void onAceptar(EntregaAdmin e) {
+                cambiarEstadoEntrega(e.getId(), EntregaAdmin.ACEPTADO);
+            }
+            @Override public void onRechazar(EntregaAdmin e) {
+                cambiarEstadoEntrega(e.getId(), EntregaAdmin.RECHAZADO);
+            }
         };
+    }
+
+    private void cambiarEstadoEntrega(int id, String estado) {
+        EntregasApi.cambiarEstadoEntrega(this, id, estado, new ApiCallback<Void>() {
+            @Override public void onSuccess(Void v) {
+                if (estaInactiva()) return;
+                Toast.makeText(ActividadAdministracion.this,
+                        EntregaAdmin.ACEPTADO.equals(estado)
+                                ? R.string.entrega_aceptada_ok
+                                : R.string.entrega_rechazada_ok,
+                        Toast.LENGTH_SHORT).show();
+                obtenerEntregas();
+            }
+            @Override public void onError(String message) {
+                if (estaInactiva()) return;
+                Toast.makeText(ActividadAdministracion.this,
+                        MapeadorErrores.paraGenerico(ActividadAdministracion.this, message),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void mostrarDetalleEntrega(EntregaAdmin e) {
@@ -516,9 +542,14 @@ public class ActividadAdministracion extends ActividadBase {
                 ? new SimpleDateFormat("dd/MM/yyyy", new Locale("es", "ES")).format(d)
                 : "-";
 
+        int estadoRes = e.esAceptado() ? R.string.solicitud_estado_aceptada
+                : e.esRechazado() ? R.string.solicitud_estado_rechazada
+                : R.string.solicitud_estado_pendiente;
+
         String msg = "Producto: " + e.getNombreProducto()
                 + "\nSocio: #" + e.getIdUsuario()
                 + "\nFecha: " + fecha
+                + "\nEstado: " + getString(estadoRes)
                 + "\n\nCongelado: " + e.getCCongelados() + " kg"
                 + "\nM: " + e.getCM() + " kg"
                 + "\nL: " + e.getCL() + " kg"

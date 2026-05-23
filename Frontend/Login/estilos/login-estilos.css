@@ -8,23 +8,29 @@ img {
     aspect-ratio: 1/1;
 }
 
-
 body {
     width: 80%;
     margin: 0 auto;
-    background-color: rgb(58, 132, 58);
+    background-color: #3a843a;
     background-image: url('fondo.jpg');
+    max-width: 1800px;
 }
 
-.icono{
+.icono {
     max-width: 200px;
     justify-self: center;
     margin: 20px 0 20px 0;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
 }
+
+.icono:hover {
+    transform: scale(1.05);
+}
+
 .login {
-
     display: grid;
-
 }
 
 form {
@@ -38,7 +44,7 @@ form {
     "Enviar Enviar"
     "error error"
     "Registro Registro";
-    background-color: rgb(229, 233, 203);
+    background-color: #e5e9cb;
     border-top: 10px solid #833900;
     border-right: 10px solid #833900;
     border-left: 10px solid #833900;
@@ -46,68 +52,94 @@ form {
     border-radius: 10px;
     padding: 0px 30px 50px 30px;
     gap: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
-input{
+input {
     padding: 10px;
+    border: 2px solid #833900;
+    border-radius: 7px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
 }
-a{
-    color: rgb(58, 132, 58);
+
+input:focus {
+    border-color: #3a843a;
+    box-shadow: 0 0 0 3px rgba(58,132,58,0.18);
 }
-.titulo{
+
+input:hover {
+    border-color: #3a843a;
+}
+
+a {
+    color: #3a843a;
+}
+
+.titulo {
     grid-area: Titulo;
-    
+    letter-spacing: -0.5px;
+    color: #275b27;
 }
- .IconoP{
+
+.IconoP {
     grid-area: IconoP;
 }
-    
-.inputE{
+
+.inputE {
     grid-area: inputE;
     width: 100%;
     font-size: 0.9rem;
     font-weight: bold;
-    color:  rgb(58, 132, 58);
-
+    color: #3a843a;
 }
-.iconoC{
+
+.iconoC {
     grid-area: IconoC;
 }
-.inputC{
+
+.inputC {
     grid-area: inputC;
     width: 100%;
     font-size: 0.9rem;
     font-weight: bold;
-    color:  rgb(58, 132, 58);
+    color: #3a843a;
 }
-.Enviar{
+
+.Enviar {
     grid-area: Enviar;
     width: 80%;
-    background-color: rgb(58, 132, 58);
-    color: white;
+    background-color: #3a843a;
+    color: #ffffff;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
-    border: none;
+    border: 2px solid #000;
     margin-top: 10px;
-}
-.Enviar:hover {
-    background-color: rgb(39, 91, 39);
     cursor: pointer;
-    transform: scale(1.02);
-    transition: all 0.2s;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
 }
 
+.Enviar:hover {
+    background-color: #275b27;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #000;
+}
 
-.error{
+.Enviar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+.error {
     grid-area: error;
     display: none;
-
 }
-.Registro{
+
+.Registro {
     grid-area: Registro;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
 }
-
-

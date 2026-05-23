@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 import com.example.tfg_cooperativa.R;
 import com.example.tfg_cooperativa.models.EntregaAdmin;
 import com.google.android.material.button.MaterialButton;
@@ -22,6 +24,8 @@ public class EntregaAdminAdapter extends BaseAdapter {
         void onEditar(EntregaAdmin entrega);
         void onEliminar(EntregaAdmin entrega);
         void onDetalle(EntregaAdmin entrega);
+        void onAceptar(EntregaAdmin entrega);
+        void onRechazar(EntregaAdmin entrega);
     }
 
     private static final SimpleDateFormat ENTRADA = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
@@ -62,9 +66,13 @@ public class EntregaAdminAdapter extends BaseAdapter {
 
         TextView producto = fila.findViewById(R.id.tvEntregaProducto);
         TextView fecha = fila.findViewById(R.id.tvEntregaFecha);
+        TextView estado = fila.findViewById(R.id.tvEntregaEstado);
         TextView socio = fila.findViewById(R.id.tvEntregaSocio);
         TextView calibres = fila.findViewById(R.id.tvEntregaCalibres);
         TextView total = fila.findViewById(R.id.tvEntregaTotal);
+        View accionesEstado = fila.findViewById(R.id.layoutEntregaEstadoAcciones);
+        MaterialButton btnAceptar = fila.findViewById(R.id.btnAceptarEntrega);
+        MaterialButton btnRechazar = fila.findViewById(R.id.btnRechazarEntrega);
         MaterialButton btnEditar = fila.findViewById(R.id.btnEditarEntrega);
         MaterialButton btnEliminar = fila.findViewById(R.id.btnEliminarEntrega);
 
@@ -75,6 +83,34 @@ public class EntregaAdminAdapter extends BaseAdapter {
                 "Congelado: %d   M: %d   L: %d   Jumbo: %d",
                 e.getCCongelados(), e.getCM(), e.getCL(), e.getCJumbo()));
         total.setText(String.format(Locale.getDefault(), "Total: %d kg", e.getTotal()));
+
+        // Chip de estado
+        int estadoRes, bgRes, colorRes;
+        if (e.esAceptado()) {
+            estadoRes = R.string.solicitud_estado_aceptada;
+            bgRes = R.drawable.bg_chip_entrega;
+            colorRes = R.color.green_700;
+        } else if (e.esRechazado()) {
+            estadoRes = R.string.solicitud_estado_rechazada;
+            bgRes = R.drawable.bg_chip_rechazada;
+            colorRes = R.color.red_700;
+        } else {
+            estadoRes = R.string.solicitud_estado_pendiente;
+            bgRes = R.drawable.bg_chip_pedido;
+            colorRes = R.color.yellow_700;
+        }
+        estado.setText(estadoRes);
+        estado.setBackgroundResource(bgRes);
+        estado.setTextColor(ContextCompat.getColor(parent.getContext(), colorRes));
+
+        // Aceptar/rechazar solo en pendientes
+        if (e.esPendiente()) {
+            accionesEstado.setVisibility(View.VISIBLE);
+            btnAceptar.setOnClickListener(v -> listener.onAceptar(e));
+            btnRechazar.setOnClickListener(v -> listener.onRechazar(e));
+        } else {
+            accionesEstado.setVisibility(View.GONE);
+        }
 
         btnEditar.setOnClickListener(v -> listener.onEditar(e));
         btnEliminar.setOnClickListener(v -> listener.onEliminar(e));

@@ -1,39 +1,54 @@
 <!--Tareas pendientes de diseño-->
 <!--Boton de olvidar contraseña-->
 
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="estilos/login-estilos.css">
-    <link rel="stylesheet" href="estilos/login-columnas.css">
+    <link rel="stylesheet" href="estilos/login-estilos.css" />
+    <link rel="stylesheet" href="estilos/login-columnas.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
+    <script src="../config.js"></script>
   </head>
   <body>
-  
     <section class="login">
-      <img class="icono" src="../imagenes/ICONO.svg" alt="" />
+      <img class="icono" src="../imagenes/icono.png" alt="" />
 
       <form action="">
         <h1 class="titulo">Inicio de sesión</h1>
 
         <img class="IconoP" src="../imagenes/iconoUsuario.png" alt="" />
 
-        <input class="inputE" type="email" name="" id="email" placeholder="Introduce tu correo electronico"/>
+        <input
+          class="inputE"
+          type="email"
+          name=""
+          id="email"
+          placeholder="Introduce tu correo electronico"
+        />
 
         <img class="iconoC" src="../imagenes/candado.png" alt="" />
 
-        <input class="inputC" type="password" name="" id="pass" placeholder="Introduce tu contraseña"/>
+        <input
+          class="inputC"
+          type="password"
+          name=""
+          id="pass"
+          placeholder="Introduce tu contraseña"
+        />
 
-        <button class="Enviar" type="button" onclick="loginUsuario()">Entrar</button>
+        <button class="Enviar" type="button" onclick="loginUsuario()">
+          Entrar
+        </button>
         <h2 class="error" id="posibleError"></h2>
-        <p class="Registro">¿No tienes cuenta? <a href="../Registro/Registro.html"><b>Registrate</b></a></p>
+        <p class="Registro">
+          ¿No tienes cuenta?
+          <a href="../Registro/Registro.html"><b>Registrate</b></a>
+        </p>
       </form>
     </section>
   </body>
-  <script src="Login.js"></script>
+  <script src="login.js"></script>
 </html>

@@ -5,16 +5,26 @@
 body {
     margin: 0;
     background-color: #ffec99;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-
     text-align: center;
     width: 100%;
     background-color: #3a843a;
     padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
 
+header h1 {
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+main {
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 .fincas {
@@ -23,61 +33,116 @@ header {
     max-width: 400px;
 }
 
-.finca{
+.finca {
     display: grid;
     justify-items: center;
-    background-color: white;
+    background-color: #ffffff;
     padding: 40px;
-    border: 15px solid #000;
+    border: 15px solid #000000;
     border-radius: 10px;
     margin-bottom: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-input{
-
-font-size: 1.2rem;
-width: 100%;
-
+.finca:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-.editando .finca-fila{
-
-display: grid;
-grid-auto-flow: row;
-
+input {
+    font-size: 1.2rem;
+    width: 100%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 4px 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.finca-botones{
+input:focus {
+    border-color: #3a843a;
+    box-shadow: 0 0 0 3px rgba(58,132,58,0.13);
+}
 
+.editando .finca-fila {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.finca-botones {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 10px;
+    gap: 8px;
 }
 
-.editar, .guardar{
-
-    background-color: rgb(28, 108, 237);
+.editar, .guardar {
+    background-color: #1c6ced;
     padding: 10px;
     border-radius: 10px;
-
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
 }
 
-.eliminar, .cancelar{
+.editar:hover, .guardar:hover {
+    background-color: #1558c0;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
 
-    background-color: rgb(238, 43, 43);
+.editar:active, .guardar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+.eliminar, .cancelar {
+    background-color: #ee2b2b;
     padding: 10px;
+    font-weight: bold;
     border-radius: 10px;
-
+    font-size: 1.4rem;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
 }
 
+.eliminar:hover, .cancelar:hover {
+    background-color: #c00000;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
 
+.eliminar:active, .cancelar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
 
-.btnañadir{
-
+.btnañadir {
     display: grid;
     justify-self: center;
-    align-items:  center;
+    align-items: center;
     margin: 10px;
     aspect-ratio: 1/1;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
 
+.btnañadir:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #000;
+}
+
+.btnañadir:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
 }

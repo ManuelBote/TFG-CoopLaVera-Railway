@@ -109,7 +109,6 @@ public final class MapeadorErrores {
         return raw == null || raw.isEmpty() ? ctx.getString(R.string.err_unknown) : raw;
     }
 
-    // ----------------------------------------------------------------- helpers
 
     private static String lower(String s) {
         return s == null ? "" : s.toLowerCase(Locale.ROOT);

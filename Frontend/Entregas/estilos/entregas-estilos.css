@@ -6,22 +6,29 @@ body {
     height: 90vh;
     display: grid;
     align-items: center;
-    background-color: rgb(116, 2, 2);
+    background-color: #740202;
     max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main {
     position: relative;
     display: grid;
     justify-items: center;
-    background-color: white;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 15px solid black;
-    border-right: 15px solid black;
+    background-color: #fff;
+    border-top: 5px solid #000;
+    border-left: 5px solid #000;
+    border-bottom: 15px solid #000;
+    border-right: 15px solid #000;
     border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    margin: 0 auto;
+    width: 100%;
 
 }
+
 #boton-ayuda {
     display: grid;
     align-items: center;
@@ -42,7 +49,6 @@ main {
     color: #000;
     box-shadow: 3px 3px 0 #000;
     transition: transform 0.15s, box-shadow 0.15s;
-    
 }
 
 #boton-ayuda:hover {
@@ -73,7 +79,6 @@ main {
     pointer-events: all;
 }
 
-
 #superposicion-ayuda::before {
     content: '';
     position: absolute;
@@ -84,7 +89,7 @@ main {
 .tarjeta-ayuda {
     display: grid;
     gap: 5px;
-   margin-right: 3px;
+    margin-right: 3px;
     position: relative;
     z-index: 1;
     background: #fff;
@@ -97,18 +102,14 @@ main {
     transform: translateY(-8px);
     transition: transform 0.25s ease;
 }
-.tarjeta-ayuda h3,p{
 
+.tarjeta-ayuda h3, p {
     margin: 0;
-
 }
 
-.titulo-guia{
-
+.titulo-guia {
     font-size: 2.4rem;
     text-align: center;
-
-
 }
 
 #superposicion-ayuda.visible .tarjeta-ayuda {
@@ -141,89 +142,103 @@ main {
     box-shadow: 1px 1px 0 #000;
 }
 
-.titulo-ayuda{
-
+.titulo-ayuda {
     text-align: justify;
     text-align: center;
-
 }
 
-.form-personal{
-
+.form-personal {
     display: grid;
     align-items: center;
     gap: 5px;
     text-align: center;
-
 }
 
-.form-prod{
-
+.form-prod {
     display: grid;
     align-items: center;
     text-align: center;
     gap: 10px;
-
 }
-.form-cont{
 
+.form-cont {
     justify-items: center;
     text-align: center;
-
 }
-form{
+
+form {
     padding: 10px;
 }
 
 h1 {
-
     font-size: 3rem;
-
+    letter-spacing: -0.5px;
 }
 
-h2{
-
+h2 {
     font-size: 2.4rem;
-
 }
 
 input, select {
-
     display: grid;
     justify-self: center;
-    border: 3px solid black;
+    border: 3px solid #000;
     border-radius: 5px;
     font-size: 1.6rem;
     width: 70%;
+    padding: 3px 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
 }
 
-.mensaje{
+input:focus, select:focus {
+    border-color: #740202;
+    box-shadow: 0 0 0 3px rgba(116,2,2,0.13);
+    background-color: #fff;
+}
 
+input:hover, select:hover {
+    border-color: #555;
+}
+
+.mensaje {
     display: grid;
     justify-self: center;
-
 }
 
-.mensaje-exito{
-
+.mensaje-exito {
     color: #000;
-
 }
-.mensaje-error{
 
+.mensaje-error {
     color: #e00000;
-
 }
-
 
 .entregar {
     width: 100%;
-    background-color: rgb(116, 2, 2);
+    background-color: #740202;
     font-weight: bolder;
-    border: none;
+    border: 2.5px solid #000;
     border-radius: 10px;
-    color: white;
+    color: #fff;
     margin-top: 20px;
     padding: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
+    text-transform: uppercase;
+}
 
+.entregar:hover {
+    background-color: #900;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #000;
+}
+
+.entregar:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #000;
 }

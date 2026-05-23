@@ -1,7 +1,3 @@
-# ===== Claude Code =====
-.claude/
-.claude/**
-
 # ===== Variables de entorno (credenciales, secretos) =====
 .env
 .env.local

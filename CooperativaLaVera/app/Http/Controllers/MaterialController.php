@@ -16,24 +16,24 @@ class MaterialController extends Controller
     // Usuarios y admin: ver un material específico
     public function show($id)
     {
-
+        
     }
 
     // Solo admin: crear material
     public function store(Request $r)
     {
-
+        
     }
 
     // Solo admin: actualizar material
     public function update(Request $r, $id)
     {
-
+        
     }
 
     // Solo admin: eliminar material
     public function destroy($id)
     {
-
+        
     }
 }

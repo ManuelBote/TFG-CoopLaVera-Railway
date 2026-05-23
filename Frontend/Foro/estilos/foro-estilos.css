@@ -20,13 +20,17 @@ a {
 body {
   margin: 0 auto;
   background-color: #ffec99;
-  max-width: 1600px;
 }
 
 /*Header*/
+.colorHeader {
+  background-color: #3a843a;
+  width: 100%;
+}
 
 header {
   display: grid;
+  margin: 0 auto;
   grid-auto-flow: column;
   margin-bottom: 30px;
   background-color: #3a843a;
@@ -34,6 +38,7 @@ header {
   top: 0;
   padding: 10px;
   z-index: 1000;
+  max-width: 1600px;
 }
 
 header>div {
@@ -42,17 +47,29 @@ header>div {
   align-items: center;
 }
 
-
 .titulo {
   color: #fff;
   font-size: 3.0;
   margin: 10px;
   font-family: 'Fjalla One';
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  letter-spacing: 0.5px;
 }
 
 .header-icono {
   max-width: 100px;
   justify-self: center;
+}
+
+.header-icono img {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.header-icono img:hover {
+  transform: scale(1.07);
 }
 
 .hamburguesa {
@@ -65,6 +82,11 @@ header>div {
   border-radius: 6px;
   padding: 4px 10px;
   align-self: center;
+  transition: background-color 0.2s;
+}
+
+.hamburguesa:hover {
+  background-color: rgba(255,255,255,0.15);
 }
 
 .header-enlaces {
@@ -81,8 +103,9 @@ header>div {
   padding: 25px;
   border-radius: 30px;
   font-weight: bold;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.15s ease;
   margin-right: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 #panel {
@@ -95,6 +118,8 @@ a {
 
 .enlace:hover {
   background-color: #999da4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /*Contenido principal de la página*/
@@ -102,7 +127,9 @@ a {
 main {
   justify-items: center;
   margin: 0 auto;
+  max-width: 1600px;
 }
+
 .tractor-anim {
   width: 100%;
   height: 100px;
@@ -123,13 +150,10 @@ main {
 }
 
 @keyframes cruzar {
-  from {
-    left: -150px;
-  }
-  to {
-    left: 100%;
-  }
+  from { left: -150px; }
+  to { left: 100%; }
 }
+
 /*Sección de noticias*/
 
 .noticias {
@@ -148,6 +172,7 @@ main {
   text-align: center;
   width: 85%;
   font-size: 3.0rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
 .subtitulo-noticias {
@@ -172,14 +197,15 @@ main {
   min-width: 50px;
   cursor: pointer;
   font-size: 1.4rem;
-  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
   flex-shrink: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .flecha:hover {
   background: #e8f5e9;
-  transform: scale(1.08);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
 }
 
 .flecha:active {
@@ -203,6 +229,8 @@ main {
   flex: 1;
   overflow: hidden;
   border: 2px solid #111;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 .carrusel-lista {
@@ -227,6 +255,7 @@ main {
   font-weight: bold;
   font-family: Georgia, serif;
   font-size: 1.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .slide img {
@@ -236,6 +265,8 @@ main {
   margin: 0 auto 18px;
   object-fit: cover;
   aspect-ratio: 4/3;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
 .slide-fecha {
@@ -294,11 +325,20 @@ main {
   border: 1px solid black;
   gap: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .ubicacion-img {
   aspect-ratio: 3/2;
   border: 3px solid red;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ubicacion-img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /*Sección de productos*/
@@ -325,6 +365,13 @@ main {
   cursor: pointer;
   background-color: #c2bebe;
   border: 20px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
 .producto .info-prod {
@@ -358,4 +405,6 @@ footer {
   background: #3a843a;
   padding: 20px;
   color: white;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
