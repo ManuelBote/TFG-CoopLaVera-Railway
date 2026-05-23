@@ -1,0 +1,35 @@
+# ===== Variables de entorno (credenciales, secretos) =====
+.env
+.env.local
+.env.*.local
+.env.backup
+.env.production
+*.env
+# Mantener plantillas públicas
+!.env.example
+
+# ===== Sistema operativo =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editores / IDE =====
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Dependencias =====
+node_modules/
+vendor/
+
+# ===== Builds =====
+dist/
+build/
+*.apk
+*.aab
