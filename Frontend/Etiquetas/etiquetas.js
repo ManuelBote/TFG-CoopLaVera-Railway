@@ -1,4 +1,4 @@
-const UrlBase = "http://127.0.0.1:8000/api/";
+const UrlBase = CONFIG.API_URL;
 
 const api = axios.create({
   baseURL: UrlBase,
@@ -177,7 +177,8 @@ async function imprimirEtiquetas(e) {
               <p><strong>Peso:</strong> 2.05 KG</p>
             </div>
             <div class="etiqueta-logo">
-              <img src="C:\Users\jesus\Desktop\curso 2ºDAW\TFG-CoopLaVera\Frontend\imagenes\ICONO.svg " alt="Logo Cooperativa La Vera" />
+              <img src="../imagenes/icono.png" alt="Logo de la cooperativa">
+
             </div>
           </div>
         `;
