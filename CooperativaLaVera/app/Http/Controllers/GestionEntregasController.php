@@ -153,7 +153,7 @@ class GestionEntregasController extends Controller
 
             $entregas = EntregaProducto::where('id_usuario', $u->id)
                 ->join('productos', 'entrega_producto.id_producto', '=', 'productos.id')
-                ->select('productos.nombre', 'fecha_entrega', 'cantidad_total', 'entrega_producto.estado')
+                ->select('productos.nombre', 'fecha_entrega', 'cantidad_total')
                 ->orderBy('fecha_entrega', 'asc')
                 ->get();
 
@@ -162,7 +162,6 @@ class GestionEntregasController extends Controller
                 $agrupado[$entrega->nombre][] = [
                     'fecha'    => $entrega->fecha_entrega,
                     'cantidad' => $entrega->cantidad_total,
-                    'estado'   => $entrega->estado,
                 ];
             }
 

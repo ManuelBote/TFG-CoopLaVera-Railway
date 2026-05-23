@@ -1,5 +1,7 @@
+const UrlBase = CONFIG.API_URL;
+
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/",
+  baseURL: UrlBase,
   headers: {
     "Content-Type": "application/json",
     "Authorization": "Bearer " + localStorage.getItem("token")
@@ -27,7 +29,6 @@ async function cargarProductos() {
     productos.forEach(producto => {
       contenedor.innerHTML += `
         <div class="producto" data-id="${producto.id}">
-          <img src="../imagenes/${producto.imagen_url}" alt="${producto.nombre}" class="imagen">
           <h1>Producto: ${producto.nombre}</h1>
           <div class="infoProd" data-campo="precio_congelado">
             <h2>Precio congelados:</h2>

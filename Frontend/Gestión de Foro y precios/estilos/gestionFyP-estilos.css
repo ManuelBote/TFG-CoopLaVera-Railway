@@ -1,51 +1,88 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0 auto;
-    background-color: rgb(230, 227, 178);
-    max-width: 1800px;
+    background-color: #ffec99;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-img{
+
+img {
     width: 100%;
     height: auto;
     aspect-ratio: 1/1;
     max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease;
 }
-header{
+
+img:hover {
+    transform: scale(1.03);
+}
+
+header {
     background-color: #b85c38;
     text-align: center;
     padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    letter-spacing: 0.5px;
 }
+
+header h1 {
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 .productos {
-
-  background-color: rgb(245, 245, 122);
-  padding: 30px;
-  text-align: center;
-  margin-bottom: 50px;
+    background-color: #f5f57a;
+    padding: 30px;
+    text-align: center;
+    max-width: 1800px;
+    margin-bottom: 50px;
+    margin: 0 auto;
 }
-.infoProd{
 
+.infoProd {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
 }
+
 .precio-input {
     width: 90%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 4px 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
-.prod-cont{
 
+.precio-input:focus {
+    border-color: #b85c38;
+    box-shadow: 0 0 0 3px rgba(184,92,56,0.13);
+}
+
+.prod-cont {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
-.producto{
 
-    border: 20px #fff solid;
-    
+.producto {
+    border: 20px #ffffff solid;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-button{
 
+.producto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+button {
     display: grid;
     justify-self: stretch;
     padding: 10px;
@@ -56,27 +93,46 @@ button{
     font-size: 1.4rem;
     width: 80%;
     margin: 0 auto;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
 }
-.producto-botones{
 
+button:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+button:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+.producto-botones {
     display: grid;
     grid-auto-flow: column;
     gap: 20px;
-
 }
-.guardar{
-    background-color: rgb(31, 118, 225);
+
+.guardar {
+    background-color: #1f76e1;
     width: 100%;
 }
-.cancelar{
 
-    background-color: rgb(237, 72, 72);
-    width: 100%;
-
+.guardar:hover {
+    background-color: #1560c0;
 }
-input{
 
+.cancelar {
+    background-color: #e00000;
+    width: 100%;
+}
+
+.cancelar:hover {
+    background-color: #b50000;
+}
+
+input {
     font-size: 1.2rem;
-
 }
-

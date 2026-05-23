@@ -4,28 +4,34 @@
 
 body {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-
-    background-color: rgb(116, 2, 2);
+    background-color: #740202;
     padding: 10px;
-    color: white;
+    color: #ffffff;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.colorForm {
+    background-color: #961313;
 }
 
 form {
-
     display: grid;
     justify-items: center;
 }
 
 .anadirEntrega {
-    background-color: rgb(150, 19, 19);
+    background-color: #961313;
     padding-bottom: 10px;
-    color: white;
+    color: #ffffff;
     padding: 0 20px 10px;
-
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
 .formulario {
@@ -44,23 +50,48 @@ form {
 }
 
 .enviar {
-
     width: 20%;
     padding: 10px;
     margin-top: 20px;
 }
 
-
 input {
     font-size: 1.3rem;
     width: 70%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 3px 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
+}
 
+input:focus {
+    border-color: #740202;
+    box-shadow: 0 0 0 3px rgba(116, 2, 2, 0.15);
+    background-color: #fff;
+}
+
+input:hover {
+    border-color: #555;
 }
 
 select {
     font-size: 1.3rem;
     padding: 3px;
     width: 80%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #740202;
+    box-shadow: 0 0 0 3px rgba(116, 2, 2, 0.15);
+    background-color: #fff;
 }
 
 .secciontabla {
@@ -68,18 +99,18 @@ select {
     justify-self: center;
     width: 95%;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid #000000;
     margin-top: 10px;
-    background-color: rgb(212, 212, 212)
-;
+    background-color: #d4d4d4;
+    max-width: 2000px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cabecera {
-
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
-
 }
 
 .filtro {
@@ -90,47 +121,51 @@ select {
 }
 
 th {
-
     font-size: 2rem;
-
+    background-color: #740202;
+    color: #fff;
+    padding: 6px;
 }
 
 td {
-    border: 1px solid black;
+    border: 1px solid #000000;
     text-align: center;
     font-size: 2rem;
+    transition: background-color 0.15s;
+}
+
+tr:hover td {
+    background-color: rgba(116, 2, 2, 0.05);
 }
 
 .col-id {
-
     width: 5%;
-    background-color: aquamarine;
-
 }
 
 .col-socio {
-
     width: 5%;
-
 }
 
 .col-producto {
-
     width: 10%;
-
 }
 
 .col-calidad {
-
     width: 10%;
-
 }
 
 .col-acciones {
     width: 10%;
     vertical-align: middle;
     text-align: center;
+}
 
+.grid-fila:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+.grid-fila:hover {
+    background-color: #f5d0d0;
 }
 
 #tablaEntregas td:last-child {
@@ -143,72 +178,126 @@ td {
 }
 
 .aceptar {
-    background-color: green;
+    background-color: #008000;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
 }
 
-.rechazar , .cancelar{
-    background-color: red;
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: bold;
+.aceptar:hover {
+    background-color: #006400;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
 }
 
-.editar , .guardar{
-
-    background-color: rgb(18, 108, 164);
+.rechazar, .cancelar {
+    background-color: #ff0000;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
-    font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
+}
 
+.rechazar:hover, .cancelar:hover {
+    background-color: #c00000;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.editar, .guardar {
+    background-color: #126ca4;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
+}
+
+.editar:hover, .guardar:hover {
+    background-color: #0d5280;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
 }
 
 .borrar {
-
-    background-color: rgb(128, 0, 0);
+    background-color: #800000;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
+}
+
+.borrar:hover {
+    background-color: #5a0000;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.aceptar:active, .rechazar:active, .cancelar:active,
+.editar:active, .guardar:active, .borrar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
 }
 
 .enviar {
     border-radius: 10px;
     font-size: 1.2rem;
     font-weight: 700;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s;
 }
+
+.enviar:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.enviar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
+
 .estado-pendiente {
-    background-color: blue;
-    color: white;
+    background-color: #0000ff;
+    color: #ffffff;
     font-weight: bold;
 }
 
 .estado-aceptado {
-    background-color: green;
-    color: white;
+    background-color: #008000;
+    color: #ffffff;
     font-weight: bold;
 }
 
 .estado-rechazado {
-    background-color: red;
-    color: white;
+    background-color: #ff0000;
+    color: #ffffff;
     font-weight: bold;
 }
-.siguiente{
 
+.siguiente {
     display: grid;
     justify-self: end;
     padding: 10px;
-
 }
 
 .errorMensaje {
-
-    color: white;
-
+    color: #ffffff;
 }
 
 .editor {

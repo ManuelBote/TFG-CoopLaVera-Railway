@@ -1,5 +1,7 @@
+const UrlBase = CONFIG.API_URL;
+
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/",
+  baseURL: UrlBase,
   headers: {
     "Content-Type": "application/json",
     "Authorization": "Bearer " + localStorage.getItem("token")
@@ -26,7 +28,6 @@ async function cargarFincas() {
     fincas.forEach(finca => {
       contenedor.innerHTML += `
         <div class="finca" data-id="${finca.id}">
-          <img class="finca-imagen" src="${finca.imagen ?? '../imagenes/default.png'}" alt="Finca ${finca.id}" />
           <div class="finca-info">
             <h1>Finca #${finca.id}</h1>
             <div class="finca-fila" data-campo="localidad">
