@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooperativa La Vera</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/foro-estilos.css" />
+    <link rel="stylesheet" href="estilos/foro-columnas.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-Titulo">
+        <h1 class="titulo">Cooperativa La Vera</h1>
+      </div>
+
+      <div class="header-icono">
+        <img src="../imagenes/ICONO.svg" alt="Icono cooperativa" />
+      </div>
+      <div class="cont-hamb">
+        <button class="hamburguesa" onclick="toggleMenu()">☰</button>
+      </div>
+      <div class="header-enlaces" id="enlaces">
+        <a href="#noticias"><div class="enlace">Noticias</div></a>
+        <a href="#ubicacion"><div class="enlace">Ubicación</div></a>
+        <a href="#productos"><div class="enlace">Productos</div></a>
+        <a href="../Login/Login.html" id="inicioSesion"
+          ><div class="enlace">Iniciar Sesión</div></a
+        >
+        <a href="../PanelUsuario/PanelUsuario.html" id="panel"
+          ><div class="enlace">👤</div></a
+        >
+      </div>
+    </header>
+
+    <div class="tractor-anim">
+      <lottie-player
+        src="../imagenes/Trator verde.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      >
+      </lottie-player>
+    </div>
+    <main>
+      <section id="noticias" class="noticias">
+        <h1 class="titulo-noticias">Noticias</h1>
+        <div class="carrusel-wrapper">
+          <button class="flecha" id="btnIzq" onclick="mover(-1)">
+            &#8592;
+          </button>
+
+          <div class="carrusel-cont">
+            <div class="carrusel-lista" id="track">
+              <!-- SLIDE 1 — reemplaza la imagen src y el texto con tu contenido real -->
+              <div class="slide">
+                <div class="slide-titulo">Temporada de Higo fresco</div>
+                <img src="../imagenes/recogida de higo.jpg" alt="Noticia 1" />
+                <div class="slide-fecha">Agosto/Octubre</div>
+                <div class="slide-texto">
+                  Aunque las brevas (la primera cosecha de la higuera) se
+                  recogen entre junio y julio, los higos más dulces y verdaderos
+                  son los que maduran durante el calor del final del verano.
+                </div>
+              </div>
+
+              <!-- SLIDE 2 -->
+              <div class="slide">
+                <div class="slide-titulo">Temporada de cerezas</div>
+                <img
+                  src="../imagenes/recogida de cerezas.webp"
+                  alt="Noticia 2"
+                />
+                <div class="slide-fecha">Mayo / Julio</div>
+                <div class="slide-texto">
+                  La temporada principal de cerezas en España y el hemisferio
+                  norte se concentra en los meses de mayo, junio y julio, siendo
+                  la primavera y el inicio del verano el periodo óptimo de
+                  recolección. Aunque la cosecha fuerte es en mayo y junio,
+                  algunas variedades tardías pueden encontrarse hasta principios
+                  de agosto.
+                </div>
+              </div>
+
+              <!-- SLIDE 3 -->
+              <div class="slide">
+                <div class="slide-titulo">Temporada de arandanos</div>
+                <img
+                  src="../imagenes/recogidadearandanos.jpg"
+                  alt="Noticia 3"
+                />
+                <div class="slide-fecha">Marzo / Agosto</div>
+                <div class="slide-texto">
+                  La temporada principal de arándanos en España se extiende de
+                  marzo a agosto, con especial calidad en los meses de verano.
+                  Aunque los primeros llegan de Huelva a principios de
+                  primavera, la producción nacional de mayor jugosidad se
+                  concentra a partir de junio, extendiéndose la recolección en
+                  zonas del norte como Asturias hasta octubre.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="flecha" id="btnDer" onclick="mover(1)">&#8594;</button>
+        </div>
+      </section>
+
+      <section id="ubicacion" class="ubicacion">
+        <h1>Ubicación 📍</h1>
+        <div class="ubi-cont">
+          <a href="https://maps.app.goo.gl/Cs1kVbmXPB4ceC4B8"
+            ><img
+              class="ubicacion-img"
+              src="../imagenes/Ubi.png"
+              alt="Mapa o ubicación"
+          /></a>
+          <div class="info-ubi">
+            <h1><i>Av. de la Libertad 27</i></h1>
+            <h1><i> 10412 Garganta la Olla, Cáceres</i></h1>
+          </div>
+        </div>
+      </section>
+
+      <section id="productos" class="productos">
+        <h1>Nuestros productos</h1>
+        <div class="prod-cont">
+          <div class="producto">
+            <img src="../imagenes/higo.jpg" alt="Higo fresco" />
+            <div class="info-prod">
+              <h2>Higo fresco</h2>
+            </div>
+          </div>
+
+          <div class="producto">
+            <img src="../imagenes/higos-secos.jpg" alt="Higo seco" />
+            <div class="info-prod">
+              <h2>Higo seco</h2>
+            </div>
+          </div>
+
+          <div class="producto">
+            <img src="../imagenes/cereza.jpg" alt="Cereza" />
+            <div class="info-prod">
+              <h2>Cereza</h2>
+            </div>
+          </div>
+
+          <div class="producto">
+            <img src="../imagenes/arandano.jpeg" alt="Arandano" />
+            <div class="info-prod">
+              <h2>Arandano</h2>
+            </div>
+          </div>
+
+          <div class="producto">
+            <img src="../imagenes/ciruelas.jpg" alt="Ciruela" />
+            <div class="info-prod">
+              <h2>Ciruela</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h2>Pagina diseñada y desarrollada por : Jesús Fdez</h2>
+    </footer>
+    <script src="foro.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/gestionEntregas-estilos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de entregas</h1>
+    </header>
+
+    <section class="anadirEntrega">
+      <form action="" onsubmit="return false;">
+        <div class="formulario">
+          <div>
+            <h2>Datos personales</h2>
+            <div class="datos">
+              <div class="dato">
+                <h2>Nº de Socio</h2>
+                <input type="number" name="" id="idSocio" required/>
+              </div>
+              <div class="dato">
+                <h2>Producto</h2>
+                <select name="" id="productos"required>
+
+                </select>
+              </div>
+              <div class="dato">
+                <h2>Fecha de entrega</h2>
+                <input type="datetime-local" name="" id="fechaEntrega" required/>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2>Calidades</h2>
+            <div class="datos">
+              <div class="dato">
+                <h2>CONGELADOS</h2>
+                <input type="number" name="" id="cCongelados" required/>
+              </div>
+
+              <div class="dato">
+                <h2>M</h2>
+                <input type="number" name="" id="cM" required/>
+              </div>
+
+              <div class="dato">
+                <h2>L</h2>
+                <input type="number" name="" id="cL" required/>
+              </div>
+
+              <div class="dato">
+                <h2>JUMBO</h2>
+                <input type="number" name="" id="cJumbo" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="enviar" type="submit" onclick="agregarEntrega()">Añadir</button>
+        <h2 class="errorMensaje" id="errorMensaje"></h2>
+      </form>
+    </section>
+    <section class="secciontabla">
+      <div class="cabecera">
+        <h1>Entregas</h1>
+        <div class="filtro">
+          <h2>Filtrar por:</h2>
+          <input type="number" name="" id="filtroSocio" placeholder="Nº de Socio" oninput="filtrarEntregas()"/>
+          <input type="date" name="" id="filtroFecha" oninput="filtrarEntregas()">
+        </div>
+      </div>
+      <table class="tabla" id="tablaEntregas">
+        <colgroup>
+          <col class="col-id" />
+          <col class="col-socio" />
+          <col class="col-producto" />
+          <col class="col-fecha" />
+          <col class="col-calidad" />
+          <col class="col-calidad" />
+          <col class="col-calidad" />
+          <col class="col-calidad" />
+          <col class="col-estado" />
+          <col class="col-acciones" />
+        </colgroup>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nº de Socio</th>
+          <th>Producto</th>
+          <th>Fecha de entrega</th>
+          <th>Congelados</th>
+          <th>M</th>
+          <th>L</th>
+          <th>Jumbo</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+          
+        </tbody>
+        
+      </table>
+      <div id="paginacion" class="paginacion"></div>
+    </section>
+  </body>
+  <script src="GestionEntregas.js"></script>
+</html>

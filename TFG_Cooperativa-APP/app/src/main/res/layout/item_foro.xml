@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="380dp"
+    android:layout_marginStart="@dimen/spacing_sm"
+    android:layout_marginEnd="@dimen/spacing_sm"
+    android:layout_marginTop="@dimen/spacing_xs"
+    android:layout_marginBottom="@dimen/spacing_base"
+    style="@style/Widget.CooperativaLaVera.CardView"
+    app:strokeColor="@color/green_200"
+    app:strokeWidth="1dp"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imgForo"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="@color/green_100"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/tvForoEmoji"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:gravity="center"
+            android:textSize="80sp"
+            android:background="@color/green_100"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_base">
+
+            <TextView
+                android:id="@+id/tvForoTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_lg"
+                android:textColor="@color/green_900"
+                android:layout_marginBottom="@dimen/spacing_xs" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_sm">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size_sm"
+                    android:layout_height="@dimen/icon_size_sm"
+                    android:src="@android:drawable/ic_menu_today"
+                    android:tint="@color/green_600"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:id="@+id/tvForoFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    android:textSize="@dimen/text_sm"
+                    android:textStyle="italic"
+                    android:textColor="@color/green_700" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvForoContenido"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:maxLines="5"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_sm"
+                android:textColor="@color/gray_700"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

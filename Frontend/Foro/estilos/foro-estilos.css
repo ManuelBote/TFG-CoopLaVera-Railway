@@ -1,0 +1,361 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #ffec99;
+  max-width: 1600px;
+}
+
+/*Header*/
+
+header {
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: 30px;
+  background-color: #3a843a;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  z-index: 1000;
+}
+
+header>div {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+
+.titulo {
+  color: #fff;
+  font-size: 3.0;
+  margin: 10px;
+  font-family: 'Fjalla One';
+}
+
+.header-icono {
+  max-width: 100px;
+  justify-self: center;
+}
+
+.hamburguesa {
+  display: none;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 10px;
+  align-self: center;
+}
+
+.header-enlaces {
+  display: grid;
+  text-align: center;
+  background-color: #3a843a;
+  z-index: 999;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.enlace {
+  background-color: white;
+  padding: 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.6s ease;
+  margin-right: 20px;
+}
+
+#panel {
+  display: none;
+}
+
+a {
+  color: black;
+}
+
+.enlace:hover {
+  background-color: #999da4;
+}
+
+/*Contenido principal de la página*/
+
+main {
+  justify-items: center;
+  margin: 0 auto;
+}
+.tractor-anim {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-image: url('../../imagenes/vallas_campo.svg');
+  background-repeat: repeat;
+  background-size: auto 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.tractor-anim lottie-player {
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  top: -40px;
+  animation: cruzar 6s linear infinite;
+}
+
+@keyframes cruzar {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}
+/*Sección de noticias*/
+
+.noticias {
+  display: grid;
+  justify-items: center;
+  padding: 30px;
+  margin-bottom: 50px;
+  background: #46a446;
+}
+
+.titulo-noticias {
+  background-color: white;
+  padding: 25px;
+  border-radius: 30px;
+  justify-self: center;
+  text-align: center;
+  width: 85%;
+  font-size: 3.0rem;
+}
+
+.subtitulo-noticias {
+  background-color: white;
+  padding: 5px;
+  border-radius: 30px;
+  justify-self: center;
+  text-align: center;
+  width: 85%;
+}
+
+/*Carrusel*/
+.flecha {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid #222;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background 0.2s, transform 0.1s;
+  flex-shrink: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.flecha:hover {
+  background: #e8f5e9;
+  transform: scale(1.08);
+}
+
+.flecha:active {
+  transform: scale(0.94);
+}
+
+.flecha:disabled {
+  opacity: 0.3;
+  cursor: default;
+  transform: none;
+}
+
+.carrusel-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.carrusel-cont {
+  flex: 1;
+  overflow: hidden;
+  border: 2px solid #111;
+}
+
+.carrusel-lista {
+  display: flex;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+  display: grid;
+  align-items: center;
+  min-width: 100%;
+  background: #4caf50;
+  padding: 20px 20px 26px;
+}
+
+.slide-titulo {
+  background: white;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 32px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+}
+
+.slide img {
+  display: block;
+  width: 70%;
+  max-width: 480px;
+  margin: 0 auto 18px;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+.slide-fecha {
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.slide-texto {
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1.5px solid #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dot.activo {
+  background: white;
+}
+
+.noti-cont>img {
+  width: 50%;
+}
+
+/*Sección de ubicación*/
+
+.ubicacion {
+  text-align: center;
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.ubi-cont {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid black;
+  gap: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ubicacion-img {
+  aspect-ratio: 3/2;
+  border: 3px solid red;
+}
+
+/*Sección de productos*/
+
+.productos {
+  background-color: #f5f57a;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.prod-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  padding: 20px;
+  gap: 20px;
+}
+
+.producto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  background-color: #c2bebe;
+  border: 20px solid white;
+}
+
+.producto .info-prod {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.producto:hover .info-prod {
+  opacity: 1;
+}
+
+#noticias,
+#ubicacion,
+#productos {
+  scroll-margin-top: 80px;
+}
+
+/*Footer*/
+
+footer {
+  background: #3a843a;
+  padding: 20px;
+  color: white;
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/entregas-estilos.css" />
+    <link rel="stylesheet" href="estilos/entregas-columnas.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+  <body>
+
+  
+    <main>
+      <button id="boton-ayuda">?</button>
+      <div id="superposicion-ayuda">
+        <div class="tarjeta-ayuda">
+          <h2 class="titulo-guia">Como realizar una entrega</h2>
+          <div>
+          <h3>Etiquetas</h3>
+          <p>Debes haber sacado las etiquetas para tus productos en la pantalla de etiquetas (sino no podemos saber de quien es el producto y por lo tanto no podemos pagarte por ello)</p>
+          </div>
+          <div>
+          <h3>Seleccionar el producto</h3>
+          <p>Después de un par de segundos, si pulsas en la flecha del cuadro de productos puedes ver todos los productos a entregar</p>
+          </div>
+          <div>
+          <h3>Introduce las cantidades</h3>
+          <p>Escribe en su respectivo recuadro las cajas recogidas por calidad</p>
+          </div>
+          <h3>Pulsa en "entregar" para confirmar tu entrega</h3>
+          <button class="boton-cerrar" id="boton-cerrar">Cerrar</button>
+        </div>
+      </div>
+
+      <h1>Entregas</h1>
+      <form action="">
+        <div class="form-cont">
+          <div class="datos-personales">
+            <h1>Datos personales</h1>
+            <div class="form-personal">
+              <h2>Nº DE SOCIO</h2>
+              <input type="number" name="" id="idSocio" />
+              <h2>PRODUCTO</h2>
+              <select name="" id="productos">
+
+              </select>
+              <h2>FECHA DE ENTREGA</h2>
+              <input type="datetime-local" name="" id="fechaEntrega">
+            </div>
+          </div>
+
+          <div class="calidades">
+            <h1>Calidades</h1>
+
+            <div class="form-prod">
+              <h2>CONGELADOS</h2>
+              <input type="number" name="" id="cCongelados" />
+
+              <h2>M</h2>
+              <input type="number" name="" id="cM" />
+
+              <h2>L</h2>
+              <input type="number" name="" id="cL" />
+
+              <h2>JUMBO</h2>
+              <input type="number" name="" id="cJumbo" />
+            </div>
+          </div>
+        </div>
+        <div class="mensaje" id="infomensaje">
+
+        </div>
+        <input class="entregar" type="button" value="ENTREGAR" onclick=" agregarEntrega()" />
+      </form>
+      
+    </main>
+  
+  </body>
+  <script src="entregas.js"></script>
+</html>

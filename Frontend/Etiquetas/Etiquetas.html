@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/etiquetas-estilos.css" />
+    <link rel="stylesheet" href="estilos/etiquetas-columnas.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    
+    <main>
+      <button id="boton-ayuda">?</button>
+      <div id="superposicion-ayuda">
+        <div class="tarjeta-ayuda">
+          <h2 class="titulo-guia">Como realizar una entrega</h2>
+          <div>
+          <h3>Finca</h3>
+          <p>Selecciona en el desplegable la finca de la que van a salir los productos</p>
+          </div>
+          <div>
+          <h3>Seleccionar el producto</h3>
+          <p>Después de un par de segundos, si pulsas en la flecha del cuadro de productos puedes ver todos los productos a entregar</p>
+          </div>
+          <div>
+          <h3>Introducir las cantidad</h3>
+          <p>Escribe el numero de etiquetas que quieres sacar de ese producto</p>
+          </div>
+          <h3>Pulsa + para añadir las etiquetas</h3>
+          <h3>Una vez tengas todas las etiquetas añadidas pulsa "IMPRIMIR"</h3>
+          <button class="boton-cerrar" id="boton-cerrar">Cerrar</button>
+        </div>
+      </div>
+      <h1>Etiquetas</h1>
+      <form action="">
+        <table class="tabla">
+          <tr>
+            <th>Número de finca</th>
+            <td><select name="" id="nFinca"></select></td>
+          </tr>
+          <tr>
+            <th>ID Usuario</th>
+            <td><input type="number" name="" id="idUsuario" /></td>
+          </tr>
+          <tr>
+            <th>Producto</th>
+            <td><select name="" id="idProducto"></select></td>
+          </tr>
+          <tr>
+            <th>Cantidad</th>
+            <td><input type="number" name="" id="cantidad" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="button" value="+" id="btnAnadir" class="anadir"/></td>
+          </tr>
+          <tr>
+            <th colspan="2">Total</th>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <ul id="listaEtiquetas"></ul>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input class="imprimir" type="submit" value="IMPRIMIR" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </main>
+    <script src="etiquetas.js"></script>
+    <div id="paginaImpresion"></div>
+  </body>
+</html>

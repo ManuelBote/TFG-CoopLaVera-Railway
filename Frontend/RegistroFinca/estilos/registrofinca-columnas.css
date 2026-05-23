@@ -1,0 +1,64 @@
+
+@media (min-width: 600px) {
+
+    .titulo{
+        font-size: 2.5rem;
+    }
+    
+    form{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    label{
+        font-size: 1.6rem;
+    }
+
+    input{
+        font-size: 1.2rem;
+    }
+
+    .Registro{
+        font-size: 1.6rem;
+    }
+    .Enviar{
+        font-size: 1.4rem;
+        padding: 10px;
+    }
+
+    form img{
+        max-width: 100px;
+    }
+
+}
+
+@media (min-width: 900px) {
+
+
+    .titulo{
+        font-size: 4rem;
+    }
+
+    input{
+        font-size: 1.8rem;
+    }
+    
+    .Enviar{
+        font-size: 1.8rem;
+        padding: 15px;
+    }
+
+    .Registro{
+        font-size: 1.8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    label{
+        font-size: 2.5rem;
+    }
+
+    form img{
+        max-width: 100px;
+    }
+
+}

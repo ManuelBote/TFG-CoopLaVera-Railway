@@ -1,0 +1,103 @@
+<!-- Cambios restantes -->                                            
+<!-- Las imagenes de los usuarios (aunque eso pasará desde el host) -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/panelUsuario-estilos.css" />
+    <link rel="stylesheet" href="estilos/panelUsuario-columnas.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo">Panel de Usuario</h1>
+      <div>
+        <div class="header-enlaces" id="enlaces">
+          <a href="../Entregas/Entregas.html"><div class="enlace">Entregar producto</div></a>
+          <a href="../Etiquetas/Etiquetas.html"><div class="enlace">Etiquetas</div></a>
+          <a href="../Gestionar Fincas/gestionfincas.html"><div class="enlace">Gestionar fincas</div></a>
+        </div>
+      </div>
+    </header>
+    <main>
+
+      <section class="datosPersonales">
+        <div class="datosUsuario">
+          <img class="imagenPersonal" src="../imagenes/icono.jpg" alt="" />
+          <div class="usuario-cont">
+            <h3 id="idUsuario">Id Usuario:</h3>
+            <h3 class="nombre" id="nombre">Nombre:</h3>
+            <h3 id="tlf">Tlf:</h3>
+            <h3 id="email">Email:</h3>
+          </div>
+        </div>
+        <div class="estadisticas">
+          <h2>Material alquilado:</h2>
+          <ul id="listaMaterial"></ul>
+          <h2>Producto entregado:</h2>
+          <ul id="listaEntregas"></ul>
+        </div>
+      </section>
+
+      <div>
+        <section class="precioProductos">
+          <h2>Precios de productos</h2>
+          <div class="filtros">
+            <select id="filtroProducto" onchange="filtrarGraficoPrecio()">
+              <option value="">Selecciona un producto</option>
+            </select>
+            <select id="filtroMesPrecio" onchange="filtrarGraficoPrecio()">
+              <option value="">Todos los meses</option>
+              <option value="01">Enero</option>
+              <option value="02">Febrero</option>
+              <option value="03">Marzo</option>
+              <option value="04">Abril</option>
+              <option value="05">Mayo</option>
+              <option value="06">Junio</option>
+              <option value="07">Julio</option>
+              <option value="08">Agosto</option>
+              <option value="09">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+            <select id="filtroAnioPrecio" onchange="filtrarGraficoPrecio()">
+              <option value="">Todos los años</option>
+            </select>
+          </div>
+          <canvas id="precioProductos"></canvas>
+        </section>
+
+        <section class="entregasProductos">
+          <h2>Entregas</h2>
+          <div class="filtros">
+            <select id="filtroMesEntregas" onchange="filtrarGraficoEntregas()">
+              <option value="">Todos los meses</option>
+              <option value="01">Enero</option>
+              <option value="02">Febrero</option>
+              <option value="03">Marzo</option>
+              <option value="04">Abril</option>
+              <option value="05">Mayo</option>
+              <option value="06">Junio</option>
+              <option value="07">Julio</option>
+              <option value="08">Agosto</option>
+              <option value="09">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+            <select id="filtroAnioEntregas" onchange="filtrarGraficoEntregas()">
+              <option value="">Todos los años</option>
+            </select>
+          </div>
+          <canvas id="miGrafico2"></canvas>
+        </section>
+      </div>
+
+    </main>
+    <script src="PanelUsuario.js"></script>
+  </body>
+</html>

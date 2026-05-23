@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ffec99;
+
+}
+
+header {
+
+    background-color: #3a843a;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+main {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.formulario {
+
+    padding: 10px;
+    background-color: lightgrey;
+
+}
+
+.alquilarMaterial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+    width: 95%;
+    margin-top: 10px;
+}
+
+.tablaStock {
+
+    display: grid;
+    justify-self: center;
+    width: 95%;
+
+}
+
+.datosUsuario {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+}
+
+.anadirMaterial {
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.estado-pendiente {
+    background-color: blue;
+    color: white;
+}
+
+.estado-aceptada {
+    background-color: green;
+    color: white;
+}
+
+.estado-rechazada {
+    background-color: red;
+    color: white;
+}
+
+input {
+
+    font-size: 1.2rem;
+
+}
+
+select {
+
+    font-size: 1.2rem;
+
+}
+
+.idUsuario, .fecha {
+
+    text-align: center;
+
+}
+
+li {
+
+    font-size: 1.8rem;
+
+}
+
+.anadirLista {
+
+    font-weight: 900;
+    font-size: 1.5rem;
+
+
+}
+
+.secciontabla {
+    display: grid;
+    justify-self: center;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(212, 212, 212);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 2.0rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.enviar {
+
+    display: grid;
+    justify-self: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: black;
+    font-size: 1.5rem;
+    color: white;
+
+}
+
+.col-id {
+
+    width: 5%;
+
+}
+
+.col-socio {
+
+    width: 10%;
+    background-color: #F5B553;
+
+}
+
+.col-calidad {
+
+    width: 10%;
+
+}
+
+.col-acciones {
+
+    width: 40%;
+
+}
+
+.col-fecha {
+
+    background-color: rgb(231, 222, 116);
+
+}
+
+.col-socio {
+
+    background-color: #F5E9A5;
+
+}
+.acciones-contenedor{
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: 3px;
+
+}
+
+.acciones-contenedor button{
+
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+.desplegar{
+
+    background-color: blue;
+
+}
+.aceptar{
+
+    background-color: green;
+
+}
+.rechazar{
+
+    background-color: red;
+
+}
+
+.fila-detalles.oculto {
+    display: none;
+}
