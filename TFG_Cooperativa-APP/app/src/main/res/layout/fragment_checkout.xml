@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_100"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header_gradient"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout_title"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout_subtitle"
+                android:textColor="@color/green_100"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Order summary card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/checkout_order_summary"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_800"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="12dp"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvOrderSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_marginBottom="12dp"/>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gray_200" android:layout_marginBottom="12dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/cart_subtotal" android:textColor="@color/gray_600" android:textSize="14sp"/>
+                        <TextView android:id="@+id/tvSummarySubtotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/gray_700" android:textSize="14sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/cart_iva" android:textColor="@color/gray_600" android:textSize="14sp"/>
+                        <TextView android:id="@+id/tvSummaryIva" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/gray_700" android:textSize="14sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/cart_total" android:textStyle="bold" android:textColor="@color/green_900" android:textSize="16sp"/>
+                        <TextView android:id="@+id/tvSummaryTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:textColor="@color/green_700" android:textSize="18sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Personal data card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/checkout_personal_data"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_800"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="16dp"/>
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/detail_name_label" android:layout_marginBottom="12dp" style="@style/Widget.CooperativaLaVera.TextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etName" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPersonName" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/detail_phone_label" android:layout_marginBottom="12dp" style="@style/Widget.CooperativaLaVera.TextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/detail_dni_label" style="@style/Widget.CooperativaLaVera.TextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDni" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Shipping address card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/checkout_address_title"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_800"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="16dp"/>
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/checkout_address_title" android:layout_marginBottom="12dp" style="@style/Widget.CooperativaLaVera.TextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAddress" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPostalAddress" android:hint="@string/checkout_address_hint" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="@string/checkout_city_label" android:layout_marginEnd="8dp" style="@style/Widget.CooperativaLaVera.TextInputLayout">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etCity" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textCapWords" android:imeOptions="actionNext"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="@string/checkout_postal_code_label" style="@style/Widget.CooperativaLaVera.TextInputLayout">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPostalCode" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:imeOptions="actionNext"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Payment card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/checkout_payment_title"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_800"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="12dp"/>
+                    <RadioGroup android:id="@+id/rgPayment" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbCash" android:layout_width="match_parent" android:layout_height="48dp" android:text="@string/checkout_payment_cash" android:textColor="@color/gray_700" android:buttonTint="@color/green_600" android:checked="true" android:layout_marginBottom="8dp"/>
+                        <RadioButton android:id="@+id/rbTransfer" android:layout_width="match_parent" android:layout_height="48dp" android:text="@string/checkout_payment_transfer" android:textColor="@color/gray_700" android:buttonTint="@color/green_600"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Confirm button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmOrder"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="@string/checkout_confirm_button"
+                android:textSize="16sp"
+                android:layout_marginBottom="80dp"
+                style="@style/Widget.CooperativaLaVera.Button"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

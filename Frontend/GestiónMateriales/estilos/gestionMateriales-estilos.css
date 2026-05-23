@@ -5,15 +5,16 @@
 body {
     margin: 0;
     background-color: #ffec99;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-
     background-color: #3a843a;
     padding: 10px;
-    color: white;
+    color: #ffffff;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    letter-spacing: 0.5px;
 }
 
 main {
@@ -22,10 +23,8 @@ main {
 }
 
 .formulario {
-
     padding: 10px;
-    background-color: lightgrey;
-
+    background-color: #d3d3d3;
 }
 
 .alquilarMaterial {
@@ -37,11 +36,9 @@ main {
 }
 
 .tablaStock {
-
     display: grid;
     justify-self: center;
     width: 95%;
-
 }
 
 .datosUsuario {
@@ -51,59 +48,101 @@ main {
 }
 
 .anadirMaterial {
-
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
     align-items: center;
-
 }
 
 .estado-pendiente {
-    background-color: blue;
-    color: white;
+    background-color: #0000ff;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .estado-aceptada {
-    background-color: green;
-    color: white;
+    background-color: #008000;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .estado-rechazada {
-    background-color: red;
-    color: white;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 input {
-
     font-size: 1.2rem;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 3px 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
+}
 
+input:focus {
+    border-color: #3a843a;
+    box-shadow: 0 0 0 3px rgba(58,132,58,0.13);
+    background-color: #fff;
+}
+
+input:hover {
+    border-color: #555;
 }
 
 select {
-
     font-size: 1.2rem;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 3px 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
+    cursor: pointer;
+}
 
+select:focus {
+    border-color: #3a843a;
+    box-shadow: 0 0 0 3px rgba(58,132,58,0.13);
+    background-color: #fff;
 }
 
 .idUsuario, .fecha {
-
     text-align: center;
-
 }
 
 li {
-
     font-size: 1.8rem;
+    padding: 3px 0;
+    transition: background-color 0.15s;
+}
 
+li:hover {
+    background-color: rgba(0,0,0,0.04);
 }
 
 .anadirLista {
-
     font-weight: 900;
     font-size: 1.5rem;
+    border: 2px solid #000;
+    border-radius: 7px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    padding: 6px 12px;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
 
+.anadirLista:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+}
 
+.anadirLista:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
 }
 
 .secciontabla {
@@ -111,101 +150,122 @@ li {
     justify-self: center;
     width: 95%;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid #000000;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgb(212, 212, 212);
+    background-color: #d4d4d4;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #000000;
     border-collapse: collapse;
     font-size: 2.0rem;
     text-align: center;
     padding: 10px;
 }
 
-.enviar {
+thead th {
+    background-color: #3a843a;
+    color: #fff;
+}
 
+tr:hover td {
+    background-color: rgba(58,132,58,0.06);
+}
+
+.enviar {
     display: grid;
     justify-self: center;
     border-radius: 10px;
     padding: 10px;
-    background-color: black;
+    background-color: #000000;
     font-size: 1.5rem;
-    color: white;
+    color: #ffffff;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #555;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
+}
 
+.enviar:hover {
+    background-color: #222;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #555;
+}
+
+.enviar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #555;
 }
 
 .col-id {
-
     width: 5%;
-
 }
 
 .col-socio {
-
     width: 10%;
-    background-color: #F5B553;
-
+    background-color: #f5b553;
 }
 
 .col-calidad {
-
     width: 10%;
-
 }
 
 .col-acciones {
-
     width: 40%;
-
 }
 
 .col-fecha {
-
-    background-color: rgb(231, 222, 116);
-
+    background-color: #e7de74;
 }
 
 .col-socio {
-
-    background-color: #F5E9A5;
-
+    background-color: #f5e9a5;
 }
-.acciones-contenedor{
 
+.acciones-contenedor {
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
     gap: 3px;
-
 }
 
-.acciones-contenedor button{
-
+.acciones-contenedor button {
     padding: 10px;
     border-radius: 10px;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1rem;
-
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, filter 0.15s;
 }
-.desplegar{
 
-    background-color: blue;
-
+.acciones-contenedor button:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000;
+    filter: brightness(0.88);
 }
-.aceptar{
 
-    background-color: green;
-
+.acciones-contenedor button:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
 }
-.rechazar{
 
-    background-color: red;
+.desplegar {
+    background-color: #0000ff;
+}
 
+.aceptar {
+    background-color: #008000;
+}
+
+.rechazar {
+    background-color: #ff0000;
 }
 
 .fila-detalles.oculto {

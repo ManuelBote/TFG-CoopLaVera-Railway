@@ -6,11 +6,12 @@ body {
     height: 90vh;
     display: grid;
     align-items: center;
-    background-color: rgb(116, 2, 2);
+    background-color: #740202;
     max-width: 1800px;
     margin: 0 auto;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 #boton-ayuda {
     display: grid;
@@ -23,25 +24,24 @@ body {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 2.5px solid #000;
-    background: #fff;
+    border: 2.5px solid #000000;
+    background: #ffffff;
     cursor: pointer;
     font-size: 1.3rem;
     font-weight: 900;
-    color: #000;
-    box-shadow: 3px 3px 0 #000;
+    color: #000000;
+    box-shadow: 3px 3px 0 #000000;
     transition: transform 0.15s, box-shadow 0.15s;
-
 }
 
 #boton-ayuda:hover {
     transform: translate(-1px, -1px);
-    box-shadow: 5px 5px 0 #000;
+    box-shadow: 5px 5px 0 #000000;
 }
 
 #boton-ayuda:active {
     transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #000;
+    box-shadow: 1px 1px 0 #000000;
 }
 
 #superposicion-ayuda {
@@ -62,7 +62,6 @@ body {
     pointer-events: all;
 }
 
-
 #superposicion-ayuda::before {
     content: '';
     position: absolute;
@@ -73,12 +72,11 @@ body {
 .tarjeta-ayuda {
     display: grid;
     grid-auto-flow: row;
-
     position: relative;
     z-index: 1;
-    background: #fff;
-    border: 2.5px solid #000;
-    box-shadow: 6px 6px 0 #000;
+    background: #ffffff;
+    border: 2.5px solid #000000;
+    box-shadow: 6px 6px 0 #000000;
     border-radius: 4px;
     max-width: 360px;
     width: 100%;
@@ -88,32 +86,23 @@ body {
 }
 
 .producto {
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 }
 
 .tarjeta-ayuda img {
-
     max-width: 100px;
-
 }
 
 .codigo {
-
     align-self: center;
     font-weight: 900;
     font-size: 1.5rem;
-
 }
 
 .titulo-guia {
-
     font-size: 2.4rem;
     text-align: center;
-
-
 }
 
 #superposicion-ayuda.visible .tarjeta-ayuda {
@@ -125,9 +114,9 @@ body {
     width: 100%;
     padding: 10px;
     background: #e00000;
-    color: #fff;
-    border: 2px solid #000;
-    box-shadow: 3px 3px 0 #000;
+    color: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0 #000000;
     font-weight: 600;
     font-size: 1.25rem;
     cursor: pointer;
@@ -138,81 +127,127 @@ body {
 
 .boton-cerrar:hover {
     transform: translate(-1px, -1px);
-    box-shadow: 5px 5px 0 #000;
+    box-shadow: 5px 5px 0 #000000;
 }
 
 .boton-cerrar:active {
     transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #000;
+    box-shadow: 1px 1px 0 #000000;
 }
 
 main {
     position: relative;
     display: grid;
     justify-items: center;
-    background-color: white;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 15px solid black;
-    border-right: 15px solid black;
+    background-color: #ffffff;
+    border-top: 5px solid #000000;
+    border-left: 5px solid #000000;
+    border-bottom: 15px solid #000000;
+    border-right: 15px solid #000000;
     border-radius: 10px;
-
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
 h1 {
-
     font-size: 2.5rem;
-
+    letter-spacing: -0.5px;
 }
 
 input, select {
-
     width: 100%;
     padding: 10px;
-    border: 3px solid black;
+    border: 3px solid #000000;
     border-radius: 5px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
+}
 
+input:focus, select:focus {
+    border-color: #740202;
+    box-shadow: 0 0 0 3px rgba(116,2,2,0.13);
+    background-color: #fff;
+}
+
+input:hover, select:hover {
+    border-color: #555;
 }
 
 select {
-
     display: grid;
     justify-self: center;
-
+    cursor: pointer;
 }
 
 th {
-
     padding: 10px;
     font-size: 1.4rem;
-
 }
 
 ul {
-    border: 3px dotted grey;
+    border: 3px dotted #808080;
     width: 100%;
+    border-radius: 5px;
 }
 
+li {
+    padding: 4px 0;
+    transition: background-color 0.15s;
+}
+
+li:hover {
+    background-color: #f5f5f5;
+}
 
 .imprimir {
-
     width: 100%;
-    background-color: rgb(116, 2, 2);
+    background-color: #740202;
     font-weight: bolder;
-    border: none;
+    border: 2.5px solid #000;
     border-radius: 10px;
-    color: white;
-
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
+    text-transform: uppercase;
 }
 
-.anadir{
+.imprimir:hover {
+    background-color: #900;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #000;
+}
 
+.imprimir:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+.anadir {
     width: 100%;
+    border: 2.5px solid #000;
+    border-radius: 7px;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
 
+.anadir:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #000;
+}
+
+.anadir:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #000;
 }
 
 #paginaImpresion {
-  display: none;
+    display: none;
 }
 
 @page {
@@ -245,7 +280,7 @@ ul {
     .etiqueta {
         break-inside: avoid;
         page-break-inside: avoid;
-        border: 1px solid black;
+        border: 1px solid #000000;
         padding: 10px;
         display: flex;
         justify-content: space-between;

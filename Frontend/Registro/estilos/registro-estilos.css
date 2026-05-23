@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    color: rgb(39, 91, 39);
+    color: #275b27;
 }
 
 img {
@@ -11,24 +11,30 @@ img {
 
 body {
     margin: 0 auto;
-    background-color: rgb(58, 132, 58);
+    background-color: #3a843a;
 }
 
-.icono{
+.icono {
     max-width: 200px;
     justify-self: center;
     margin: 20px 0 20px 0;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
 }
+
+.icono:hover {
+    transform: scale(1.05);
+}
+
 .login {
-
     display: grid;
-
 }
 
 form {
     display: grid;
     justify-items: center;
-    background-color: rgb(229, 233, 203);
+    background-color: #e5e9cb;
     border-top: 10px solid #833900;
     border-right: 10px solid #833900;
     border-left: 10px solid #833900;
@@ -36,49 +42,64 @@ form {
     border-radius: 10px;
     padding: 0px 30px 50px 30px;
     gap: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
-input{
+input {
     padding: 10px;
-    color: rgb(39, 91, 39);
-
-}
-.titulo{
-
-    
-}
-label{
-    font-weight: bold;
-}
-    
-input{
-
+    color: #275b27;
     width: 100%;
     font-size: 0.9rem;
-
+    border: 2px solid #833900;
+    border-radius: 7px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
 }
 
+input:focus {
+    border-color: #3a843a;
+    box-shadow: 0 0 0 3px rgba(58,132,58,0.18);
+}
 
-.registrar{
+input:hover {
+    border-color: #3a843a;
+}
 
+.titulo {
+    letter-spacing: -0.5px;
+}
+
+label {
+    font-weight: bold;
+    align-self: end;
+}
+
+.registrar {
     width: 80%;
-    background-color: rgb(58, 132, 58);
-    color: white;
+    background-color: #3a843a;
+    color: #ffffff;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
-    border: none;
-    transform: scale(1.02);
-    transition: all 0.2s;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.15s;
 }
-
 
 .registrar:hover {
-    background-color: rgb(39, 91, 39);
+    background-color: #275b27;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 #000;
 }
+
+.registrar:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
+
 #posibleError {
     display: none;
     margin: 0;
 }
-
-
