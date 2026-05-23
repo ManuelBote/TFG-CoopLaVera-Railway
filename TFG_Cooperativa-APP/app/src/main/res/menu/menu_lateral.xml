@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/grupoSiempre" android:checkableBehavior="single">
+        <item
+            android:id="@+id/menuInicio"
+            android:icon="@drawable/ic_nav_home"
+            android:title="@string/nav_home"/>
+    </group>
+
+    <group android:id="@+id/grupoInvitado" android:checkableBehavior="single">
+        <item
+            android:id="@+id/menuLogin"
+            android:icon="@drawable/ic_nav_login"
+            android:title="@string/nav_login"/>
+    </group>
+
+    <group android:id="@+id/grupoUsuario" android:checkableBehavior="single">
+        <item
+            android:id="@+id/menuPortal"
+            android:icon="@drawable/ic_nav_portal"
+            android:title="@string/nav_portal"/>
+
+        <item
+            android:id="@+id/menuFincas"
+            android:icon="@android:drawable/ic_menu_mylocation"
+            android:title="@string/nav_fincas"/>
+
+        <item
+            android:id="@+id/menuProductos"
+            android:icon="@drawable/ic_nav_delivery"
+            android:title="@string/nav_products"/>
+
+        <item
+            android:id="@+id/menuEtiquetas"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/nav_etiquetas"/>
+    </group>
+
+    <group android:id="@+id/grupoAdmin" android:checkableBehavior="single">
+        <item
+            android:id="@+id/menuAdministracion"
+            android:icon="@drawable/ic_nav_admin"
+            android:title="@string/nav_admin"/>
+    </group>
+
+    <group android:id="@+id/grupoSesion">
+        <item
+            android:id="@+id/menuCerrarSesion"
+            android:icon="@drawable/ic_nav_logout"
+            android:title="@string/nav_logout"/>
+    </group>
+
+</menu>
