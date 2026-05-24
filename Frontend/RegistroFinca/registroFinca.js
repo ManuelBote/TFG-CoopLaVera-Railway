@@ -25,13 +25,8 @@ function validarCampos(datos) {
     return false;
   }
 
-  if (!datos.higueras || !datos.ciruelos || !datos.arandanos || !datos.cerezos) {
-    mostrarError("Debes rellenar todos los campos obligatorios.");
-    return false;
-  }
-
-  if (datos.higueras <= 0 || datos.ciruelos <= 0 || datos.arandanos <= 0 || datos.cerezos <= 0) {
-    mostrarError("El número de árboles debe ser mayor que 0.");
+  if (datos.higueras <= 0 && datos.ciruelos <= 0 && datos.arandanos <= 0 && datos.cerezos <= 0) {
+    mostrarError("Debes introducir al menos un tipo de árbol.");
     return false;
   }
 
