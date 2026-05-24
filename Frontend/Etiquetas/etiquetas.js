@@ -184,9 +184,10 @@ async function imprimirEtiquetas(e) {
     const contenedor = document.getElementById("paginaImpresion");
     contenedor.innerHTML = "";
 
+    const todasEtiquetas = [];
     listaEtiquetas.forEach((item) => {
       for (let i = 0; i < item.cantidad; i++) {
-        contenedor.innerHTML += `
+        todasEtiquetas.push(`
           <div class="etiqueta">
             <div class="etiqueta-datos">
               <h2>Cooperativa La Vera</h2>
@@ -198,9 +199,17 @@ async function imprimirEtiquetas(e) {
               ${iconoDataUrl ? `<img src="${iconoDataUrl}" alt="Logo de la cooperativa" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:contain;">` : ''}
             </div>
           </div>
-        `;
+        `);
       }
     });
+
+    const ETIQUETAS_POR_PAGINA = 10;
+    for (let i = 0; i < todasEtiquetas.length; i += ETIQUETAS_POR_PAGINA) {
+      const pagina = document.createElement("div");
+      pagina.className = "pagina-impresion";
+      pagina.innerHTML = todasEtiquetas.slice(i, i + ETIQUETAS_POR_PAGINA).join("");
+      contenedor.appendChild(pagina);
+    }
 
     listaEtiquetas = [];
     renderizarLista();
