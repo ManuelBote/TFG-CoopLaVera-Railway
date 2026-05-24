@@ -10,6 +10,24 @@ const api = axios.create({
 
 
 let listaEtiquetas = [];
+let iconoDataUrl = '';
+
+function precargarIcono() {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      canvas.getContext('2d').drawImage(img, 0, 0);
+      iconoDataUrl = canvas.toDataURL('image/png');
+      resolve();
+    };
+    img.onerror = () => { iconoDataUrl = ''; resolve(); };
+    img.src = '../imagenes/icono.png';
+  });
+}
 
 // --- Redirección si no hay token ---
 function obtenerDatosUsuario() {
@@ -176,9 +194,8 @@ async function imprimirEtiquetas(e) {
               <p><strong>Nº Finca:</strong> ${item.nFinca} / ${finca.localidad} / ${finca.direccion}</p>
               <p><strong>Peso:</strong> 2.05 KG</p>
             </div>
-            <div class="etiqueta-logo">
-              <img src="../imagenes/icono.png" alt="Logo de la cooperativa">
-
+            <div class="etiqueta-logo" style="flex:0 0 40px;width:40px;height:40px;margin-left:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              ${iconoDataUrl ? `<img src="${iconoDataUrl}" alt="Logo de la cooperativa" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:contain;">` : ''}
             </div>
           </div>
         `;
@@ -193,9 +210,11 @@ async function imprimirEtiquetas(e) {
   }
 }
 
-window.onload = function () {
+window.onload = async function () {
+  await precargarIcono();
   recuperarFincas();
-  recuperarProductos();document.getElementById("btnAnadir").addEventListener("click", anadirEtiqueta);
+  recuperarProductos();
+  document.getElementById("btnAnadir").addEventListener("click", anadirEtiqueta);
   obtenerDatosUsuario();
   document.querySelector(".imprimir").addEventListener("click", imprimirEtiquetas);
 };
