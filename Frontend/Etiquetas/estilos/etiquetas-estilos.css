@@ -273,7 +273,13 @@ li:hover {
     }
 
     #paginaImpresion {
-        display: grid !important;
+        display: block !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pagina-impresion {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(5, 1fr);
         width: 100vw;
@@ -281,6 +287,13 @@ li:hover {
         margin: 0;
         padding: 0;
         gap: 0;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .pagina-impresion:last-child {
+        break-after: avoid;
+        page-break-after: avoid;
     }
 
     .etiqueta {

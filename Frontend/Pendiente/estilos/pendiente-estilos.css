@@ -4,10 +4,9 @@ body {
     align-content: center;
     background-color: #ffec99;
     height: 90vb;
-    
 }
-.comprobar{
 
+.comprobar {
     display: grid;
     justify-self: center;
     padding: 10px;
@@ -15,5 +14,18 @@ body {
     font-weight: bold;
     font-size: 1.5rem;
     border-radius: 10px;
+}
 
+.cerrar-sesion {
+    display: grid;
+    justify-self: center;
+    padding: 10px;
+    background-color: #c0392b;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
 }

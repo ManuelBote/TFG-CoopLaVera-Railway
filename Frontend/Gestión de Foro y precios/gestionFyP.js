@@ -22,10 +22,8 @@ async function cargarProductos() {
   try {
     const respuesta = await api.get("/productos");
     const productos = respuesta.data;
-
     const contenedor = document.getElementById("contenedorProductos");
     contenedor.innerHTML = "";
-
     productos.forEach(producto => {
       contenedor.innerHTML += `
         <div class="producto" data-id="${producto.id}">
