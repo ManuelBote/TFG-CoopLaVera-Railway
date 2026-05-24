@@ -153,7 +153,6 @@ class GestionEntregasController extends Controller
             $u = Auth::user();
 
             $entregas = EntregaProducto::where('id_usuario', $u->id)
-                ->where('entrega_producto.estado', 'aceptado')
                 ->join('productos', 'entrega_producto.id_producto', '=', 'productos.id')
                 ->select('productos.nombre', 'fecha_entrega', 'cantidad_total', 'entrega_producto.estado')
                 ->orderBy('fecha_entrega', 'asc')
