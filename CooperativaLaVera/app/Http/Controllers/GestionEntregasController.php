@@ -61,6 +61,7 @@ class GestionEntregasController extends Controller
 
         $cajasYaEntregadas = EntregaProducto::where('id_usuario', $request->id_usuario)
             ->where('id_producto', $idProducto)
+            ->whereIn('estado', ['pendiente', 'aceptado'])
             ->sum('cantidad_total');
 
         $cajasEntrega = (int)$request->cCongelados + (int)$request->cM +
@@ -152,6 +153,7 @@ class GestionEntregasController extends Controller
             $u = Auth::user();
 
             $entregas = EntregaProducto::where('id_usuario', $u->id)
+                ->where('entrega_producto.estado', 'aceptado')
                 ->join('productos', 'entrega_producto.id_producto', '=', 'productos.id')
                 ->select('productos.nombre', 'fecha_entrega', 'cantidad_total')
                 ->orderBy('fecha_entrega', 'asc')
