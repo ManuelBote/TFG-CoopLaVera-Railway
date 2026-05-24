@@ -10,24 +10,7 @@ const api = axios.create({
 
 
 let listaEtiquetas = [];
-let iconoDataUrl = '';
-
-function precargarIcono() {
-  return new Promise(resolve => {
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.onload = function () {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      canvas.getContext('2d').drawImage(img, 0, 0);
-      iconoDataUrl = canvas.toDataURL('image/png');
-      resolve();
-    };
-    img.onerror = () => { iconoDataUrl = ''; resolve(); };
-    img.src = '../imagenes/icono.png';
-  });
-}
+const ICONO_SRC = '../imagenes/icono.png';
 
 // --- Redirección si no hay token ---
 function obtenerDatosUsuario() {
@@ -196,7 +179,7 @@ async function imprimirEtiquetas(e) {
               <p><strong>Peso:</strong> 2.05 KG</p>
             </div>
             <div class="etiqueta-logo" style="flex:0 0 40px;width:40px;height:40px;margin-left:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-              ${iconoDataUrl ? `<img src="${iconoDataUrl}" alt="Logo de la cooperativa" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:contain;">` : ''}
+              <img src="${ICONO_SRC}" alt="Logo de la cooperativa" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:contain;">
             </div>
           </div>
         `);
@@ -219,8 +202,7 @@ async function imprimirEtiquetas(e) {
   }
 }
 
-window.onload = async function () {
-  await precargarIcono();
+window.onload = function () {
   recuperarFincas();
   recuperarProductos();
   document.getElementById("btnAnadir").addEventListener("click", anadirEtiqueta);
